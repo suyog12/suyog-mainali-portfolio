@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suyog Mainali - Database Engineer Portfolio</title>
+    <!-- Use Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .icon-link svg {
+            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .icon-link:hover svg {
+            color: #2dd4bf;
+            transform: scale(1.1);
+        }
+        .contact-info a:hover {
+            color: #2dd4bf;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-gray-950 px-6 py-4 flex flex-col sm:flex-row justify-between items-center border-b border-gray-800">
+        <div class="text-3xl font-bold text-teal-400 mb-4 sm:mb-0">
+            <a href="#">Suyog Mainali</a>
+        </div>
+        <nav class="flex flex-wrap justify-center space-x-6 text-lg font-medium">
+            <a href="#about" class="hover:text-teal-400 transition-colors duration-200">About</a>
+            <a href="#skills" class="hover:text-teal-400 transition-colors duration-200">Skills</a>
+            <a href="#projects" class="hover:text-teal-400 transition-colors duration-200">Projects</a>
+            <a href="#experience" class="hover:text-teal-400 transition-colors duration-200">Experience</a>
+            <a href="#education" class="hover:text-teal-400 transition-colors duration-200">Education</a>
+            <a href="#contact" class="hover:text-teal-400 transition-colors duration-200">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <main class="container mx-auto px-6 py-16 mt-24">
+        <section id="about" class="bg-gray-900 p-8 md:p-12 rounded-3xl shadow-lg border border-gray-800">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-teal-400 mb-4">
+                    Data Engineer
+                </h1>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+                   Hello, I'm Suyog Mainali, a data analyst who likes turning raw data into actionable insights. I've used SQL, Python, Dash, Tableau, Power BI, and Looker for over five years. For user behavior, retention, and revenue tracking, I've built automated dashboards, ETL pipelines, and predictive models. In complex healthcare datasets, I have built machine learning pipelines and found meaningful insights alongside global teams and senior leaders. My finest work combines analytics, problem-solving, and narrative to turn data into actionable plans. I'm doing my MS in Business Analytics at William & Mary to construct bigger data platforms and decision tools.
+                </p>
+                <div class="space-x-4">
+                    <a href="#projects" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="inline-block border border-gray-600 hover:border-teal-400 text-gray-300 hover:text-teal-400 font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-10 text-teal-400">Core Skills</h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-teal-300">Data Engineering & Databases</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">SQL</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">MySQL</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Hive</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Impala</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Big Data</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Hadoop</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">ETL/ELT</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Airflow</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">dbt</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-teal-300">Machine Learning & Analysis</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Machine Learning Optimization</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Stochastic Modeling</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Scikit-learn</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">TensorFlow</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Keras</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Ananomly Detection</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Predictive Modeling</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Data Modeling</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">User Segmentation</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-teal-300">Languages & Tools</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Python</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">R</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Spark</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Dash</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Tableau</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Power BI</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Looker</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-6 py-3 rounded-full transition-transform transform hover:scale-105 border border-gray-700">Excel</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-10 text-teal-400">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-900 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-800">
+                    <h3 class="text-2xl font-semibold mb-3 text-teal-300">$100 Question</h3>
+                    <p class="text-gray-400 mb-4">
+                        A real-time data visualization dashboard built with Plotly Dash, focusing on presenting complex data in an interactive and user-friendly format. This project showcases proficiency in creating effective analytical tools.
+                    </p>
+                    <a href="https://final-group-project-dash-app-team-9.onrender.com/" target="_blank" class="text-teal-400 hover:text-teal-300 transition-colors duration-200 font-medium">View Live &rarr;</a>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-gray-900 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-800">
+                    <h3 class="text-2xl font-semibold mb-3 text-teal-300">FRED Dashboard</h3>
+                    <p class="text-gray-400 mb-4">
+                        Developed a data analysis dashboard for FRED (Federal Reserve Economic Data) using Python and data visualization libraries. This project demonstrates skills in data cleaning, transformation, and creating clear, compelling visualizations from raw economic data.
+                    </p>
+                    <a href="https://github.com/suyog12/CBTA-Fred-Dashboard-Team-9" target="_blank" class="text-teal-400 hover:text-teal-300 transition-colors duration-200 font-medium">View on GitHub &rarr;</a>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-gray-900 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-800">
+                    <h3 class="text-2xl font-semibold mb-3 text-teal-300">Hybrid Encryption</h3>
+                    <p class="text-gray-400 mb-4">
+                        An implementation of a hybrid encryption system. This project showcases a strong understanding of fundamental cryptographic principles and secure data handling, a critical skill for any data-focused role.
+                    </p>
+                    <a href="https://github.com/suyog12/hybridEncryption" target="_blank" class="text-teal-400 hover:text-teal-300 transition-colors duration-200 font-medium">View on GitHub &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-10 text-teal-400">Work Experience</h2>
+            <div id="experience-container" class="space-y-8">
+                <!-- Graduate and Research Assistant -->
+                <div class="bg-gray-900 p-8 rounded-3xl shadow-lg border border-gray-800">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-2xl font-semibold text-teal-300">William and Mary</h3>
+                        <span class="text-gray-400">September 2025 - Present</span>
+                    </div>
+                    <p class="text-gray-500 font-medium mb-4">Graduate and Research Assistant</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Managed the SONA system, ensuring smooth operation for research participants and studies.</li>
+                        <li>Conducted research on the use of AI voice assistants in daily life, investigating user acceptance and rejection with Professor Seth Li.</li>
+                    </ul>
+                </div>
+                <!-- Zakipoint Health -->
+                <div class="bg-gray-900 p-8 rounded-3xl shadow-lg border border-gray-800">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-2xl font-semibold text-teal-300">Zakipoint Health</h3>
+                        <span class="text-gray-400">July 2020 - August 2025</span>
+                    </div>
+                    <p class="text-gray-500 font-medium mb-4">Senior Database & Data Analyst</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Utilized <span class="font-bold">SQL, Python, and Spark</span> to integrate claims, eligibility, provider demographics, and clinical EHR datasets from various payer systems, ensuring HIPAA compliance and reducing manual aggregation time by 70%, resulting in daily executive reports.</li>
+                        <li>Improved cost and outcome forecast accuracy by <span class="font-bold">38%</span> using advanced risk adjustment and HEDIS quality measure frameworks, including feature engineering, gradient boosting, and time-series modeling with scikit-learn, TensorFlow, and Keras.</li>
+                        <li>Created automated population health dashboards and value-based care reports using Tableau, Power BI, and Dash, analyzing cost trends, adherence rates, and readmission probabilities to inform strategic planning.</li>
+                        <li>Implemented Python-based <span class="font-bold">anomaly detection</span> systems to detect outliers in utilization claims, suspected fraud, waste, and abuse patterns, reducing investigation time from 5 days to 8 hours and preventing <span class="font-bold">$2M revenue leakage</span>.</li>
+                        <li>Led the transition from legacy reporting to production-grade machine learning pipelines, implementing Git-based version control, Jenkins CI/CD deployments, and Jira-driven sprint planning.</li>
+                    </ul>
+                </div>
+                <!-- Om Hospital & Research Centre -->
+                <div class="bg-gray-900 p-8 rounded-3xl shadow-lg border border-gray-800">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-2xl font-semibold text-teal-300">Om Hospital & Research Centre</h3>
+                        <span class="text-gray-400">April 2018 - July 2020</span>
+                    </div>
+                    <p class="text-gray-500 font-medium mb-4">Database Manager (Remote Full-Time)</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Shifted old hospital records to <span class="font-bold">DHIS2</span> so staff could track health data live and get quicker access to patient info.</li>
+                        <li>Used <span class="font-bold">R and Python</span> for predictive modeling on outbreaks, which lifted emergency readiness by 20%.</li>
+                        <li>Set up <span class="font-bold">Tableau and Power BI</span> boards to watch wait times and daily flow, cutting delays by 25%.</li>
+                        <li>Trained over 500 staff on data tools, which helped the hospital move toward daily use of data in decisions.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-10 text-teal-400">Education</h2>
+            <div class="space-y-8 max-w-2xl mx-auto">
+                <!-- William & Mary -->
+                <div class="bg-gray-900 p-8 rounded-3xl shadow-lg border border-gray-800">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-2xl font-semibold text-teal-300">William & Mary, Raymond A. Mason School of Business</h3>
+                        <span class="text-gray-400">August 2025 - May 2026</span>
+                    </div>
+                    <p class="text-gray-500 font-medium">Master of Science, Business Analytics</p>
+                </div>
+                <!-- Vellore Institute of Technology -->
+                <div class="bg-gray-900 p-8 rounded-3xl shadow-lg border border-gray-800">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-2xl font-semibold text-teal-300">Vellore Institute of Technology (VIT)</h3>
+                        <span class="text-gray-400">August 2018 - May 2022</span>
+                    </div>
+                    <p class="text-gray-500 font-medium">Bachelor of Technology, Computer Science Engineering</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center">
+            <h2 class="text-4xl font-bold mb-6 text-teal-400">Get In Touch</h2>
+            <p class="text-lg text-gray-400 max-w-xl mx-auto mb-8">
+                I'm currently seeking new opportunities. Feel free to connect with me to discuss database projects, career opportunities, or just to say hello.
+            </p>
+            <div class="contact-info space-y-4 mb-8">
+                <p>
+                    <a href="mailto:mainalisuyog0@gmail.com" class="text-gray-400 hover:text-teal-400 transition-colors">mainalisuyog0@gmail.com</a>
+                    <span class="text-gray-600 mx-2">/</span>
+                    <a href="mailto:smainali01@wm.edu" class="text-gray-400 hover:text-teal-400 transition-colors">smainali01@wm.edu</a>
+                </p>
+                <p>
+                    <a href="tel:+17572068339" class="text-gray-400 hover:text-teal-400 transition-colors">+1-757-206-8339</a>
+                </p>
+            </div>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <!-- GitHub Icon -->
+                <a href="https://github.com/suyog12" target="_blank" class="icon-link text-gray-400 hover:text-teal-400 transition-colors duration-200" aria-label="GitHub Profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.417 2.865 8.163 6.83 9.487.5.088.68-.232.68-.518 0-.256-.015-.93-.015-1.85 0-.613.207-1.168.56-1.564-.86-.186-1.764-.428-1.764-.428-1.428-1.353-2.616-1.808-2.616-1.808-1.07-.75-.08-.735-.08-.735.808.056 1.23.834 1.23.834.72 1.233 1.88.875 2.336.666.072-.518.28-.875.508-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.875.31-1.59.818-2.15-.082-.2-.356-1.018.077-2.112 0 0 .668-.215 2.18.82.634-.176 1.308-.264 1.98-.267.672.003 1.346.091 1.98.267 1.512-1.035 2.18-.82 2.18-.82.434 1.094.16 1.912.078 2.112.508.56.818 1.275.818 2.15 0 3.073-1.868 3.753-3.65 3.945.29.25.55.73.55 1.472 0 1.07-.015 1.94-.015 2.213 0 .288.18.608.688.512C19.135 20.177 22 16.432 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center border-t border-gray-800">
+        <p class="text-gray-500 text-sm">&copy; 2025 Suyog Mainali. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+       
+    </script>
+</body>
+</html>
+
