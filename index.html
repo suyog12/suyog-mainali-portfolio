@@ -1,1070 +1,771 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suyog Mainali - Database Engineer Portfolio</title>
-    <!-- Use Inter font from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .icon-link svg {
-            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-        }
-        .icon-link:hover svg {
-            color: #2dd4bf;
-            transform: scale(1.1);
-        }
-        .contact-info a:hover {
-            color: #2dd4bf;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Suyog Mainali – Data Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Petabyte-scale, HIPAA-compliant data pipelines | PySpark • Airflow • dbt • Snowflake • AWS">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --accent: #6366f1;
+      --text: #1e293b;
+      --muted: #64748b;
+    }
+    .dark {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+    }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: var(--bg); 
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    .glass { 
+      background: rgba(255,255,255,.7); 
+      backdrop-filter: blur(12px); 
+    }
+    .dark .glass { 
+      background: rgba(15,23,42,.7); 
+    }
+    .reveal { 
+      opacity: 0; 
+      transform: translateY(30px); 
+      transition: opacity 0.6s, transform 0.6s; 
+    }
+    .reveal.show { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+    .pill { 
+      display: inline-flex; 
+      padding: 6px 16px; 
+      border-radius: 9999px; 
+      border: 1px solid var(--border); 
+      background: var(--card);
+    }
+    .impact-list { 
+      max-height: 0; 
+      overflow: hidden; 
+      transition: max-height 0.5s ease; 
+    }
+    .impact-list.open { 
+      max-height: 2000px; 
+    }
+    .metric-card {
+      padding: 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+    }
+    .metric-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .metric-label {
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--accent);
+    }
+    nav a {
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    section {
+      scroll-margin-top: 90px;
+    }
+  </style>
 </head>
-<body class="bg-gray-950 text-gray-200">
 
-    <!-- Header & Navigation -->
-    <header class="fixed top-0 w-full z-50 bg-gray-950/95 backdrop-blur px-6 py-4 flex flex-col sm:flex-row justify-between items-center border-b border-gray-800">
-    <div class="text-3xl font-bold text-teal-400 mb-4 sm:mb-0">
-        <a href="#top" class="hover:opacity-90">Suyog Mainali</a>
-    </div>
-    <nav id="main-nav" class="flex flex-wrap justify-center gap-x-6 text-lg font-medium">
-        <a href="#about" class="nav-link hover:text-teal-400 transition-colors">About</a>
-        <a href="#experience" class="nav-link hover:text-teal-400 transition-colors">Experience</a>       
-        <a href="#education" class="nav-link hover:text-teal-400 transition-colors">Education</a>
-        <a href="#projects" class="nav-link hover:text-teal-400 transition-colors">Projects</a>
-        <a href="#certifications" class="nav-link hover:text-teal-400 transition-colors">Certifications</a>
-        <a href="#skills" class="nav-link hover:text-teal-400 transition-colors">Skills</a>
-        <a href="#resume" class="nav-link hover:text-teal-400 transition-colors">Resume</a>
-        <a href="#contact" class="nav-link hover:text-teal-400 transition-colors">Contact</a>
+<body>
+
+<!-- LIGHT/DARK TOGGLE -->
+<button id="theme-toggle" class="fixed top-4 right-4 z-50 p-3 rounded-full bg-card border shadow-lg hover:scale-110 transition-transform">
+  <span class="dark:hidden text-xl">🌙</span>
+  <span class="hidden dark:inline text-xl">☀️</span>
+</button>
+
+<header class="sticky top-0 z-40 glass border-b" style="border-color: var(--border);">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#top" class="text-xl font-bold" style="color: var(--accent);">Suyog Mainali</a>
+    <nav class="hidden md:flex gap-6 text-sm font-medium">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Résumé</a>
+      <a href="#contact">Contact</a>
     </nav>
-    </header>
+  </div>
+</header>
 
-    <!-- Smooth Scroll + Active Section Highlight -->
-    <script>
-    // Smooth scroll respecting reduced motion
-    document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-        const id = link.getAttribute('href');
-        const target = document.querySelector(id);
-        if (!target) return;
-        e.preventDefault();
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
-        history.replaceState(null, '', id);
-    });
-    });
+<main id="top" class="max-w-6xl mx-auto px-6">
 
-    // Map sections to nav links
-    const sections = Array.from(document.querySelectorAll('section[id]'));
-    const linksById = {};
-    document.querySelectorAll('a.nav-link[href^="#"]').forEach(a => {
-    const id = a.getAttribute('href').slice(1);
-    linksById[id] = a;
-    });
+  <!-- HERO -->
+  <section id="about" class="py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center reveal">
+    <div>
+      <h1 class="text-5xl font-extrabold tracking-tighter">
+        Data Engineer <span style="color: var(--accent);">(MSBA '26)</span>
+      </h1>
+      <p class="mt-4 text-lg" style="color: var(--muted);">
+        Data Engineer with 5+ years building <strong>large-scale, HIPAA-compliant</strong> data platforms.
+        Specialized in <span class="font-medium" style="color: var(--accent);">PySpark, Airflow, dbt, Snowflake, and AWS</span>,
+        delivering reliable batch and streaming pipelines that power analytics and ML systems.
+      </p>
+      <div class="mt-6 flex gap-4">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
+    </div>
 
-    // IntersectionObserver for active highlighting
-    const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        const id = entry.target.id;
-        const link = linksById[id];
-        if (!link) return;
-        if (entry.isIntersecting) {
-        document.querySelectorAll('a.nav-link.active')
-            .forEach(el => el.classList.remove('active','text-teal-400'));
-        link.classList.add('active','text-teal-400');
-        link.setAttribute('aria-current','page');
-        } else {
-        link.removeAttribute('aria-current');
-        }
-    });
-    }, {
-    rootMargin: '-30% 0px -55% 0px',
-    threshold: 0.01
-    });
+    <div class="flex justify-center">
+      <img src="images/Mainali_Suyog_250818006.jpg" alt="Suyog Mainali"
+           class="w-64 h-64 rounded-2xl object-cover shadow-xl" style="border: 2px solid var(--border);">
+    </div>
+  </section>
 
-    sections.forEach(sec => obs.observe(sec));
-    </script>
+  <!-- METRICS BAR -->
+  <section class="py-10 reveal">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
+      <div class="metric-card">
+        <div class="metric-number counter" data-target="10">0</div>
+        <div class="metric-label">TB healthcare data/day</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number counter" data-target="99.8">0</div>
+        <div class="metric-label">% pipeline SLA</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number counter" data-target="40">0</div>
+        <div class="metric-label">% faster BI queries</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number counter" data-target="25">0</div>
+        <div class="metric-label">% ↓ patient wait-time</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="py-10 reveal">
+    <h2 class="text-2xl font-bold text-center mb-6">What I've Used to Build Data</h2>
+    <div class="flex flex-wrap justify-center gap-2 text-sm">
+      <span class="pill">PySpark</span><span class="pill">Airflow</span><span class="pill">dbt</span>
+      <span class="pill">Snowflake</span><span class="pill">Redshift</span><span class="pill">AWS</span>
+      <span class="pill">Kafka</span><span class="pill">Lambda</span><span class="pill">Step Functions</span>
+      <span class="pill">PostgreSQL</span><span class="pill">Elasticsearch</span>
+      <span class="pill">Docker</span><span class="pill">Kubernetes</span><span class="pill">Jenkins</span>
+      <span class="pill">Terraform</span><span class="pill">HIPAA</span><span class="pill">SOC-2</span>
+      <span class="pill">Python</span><span class="pill">SQL</span><span class="pill">R</span>
+      <span class="pill">Feature Pipelines</span><span class="pill">ML Enablement</span><span class="pill">Azure</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-16 md:py-20 reveal">
+    <h2 class="section-title">Production Systems I've Built</h2>
+
+    <!-- William & Mary -->
+    <article class="bg-card p-6 md:p-8 mb-8 rounded-2xl" style="border: 1px solid var(--border);">
+      <div class="flex flex-col md:flex-row md:justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <img src="images/william_and_mary.png" class="w-12 h-12 object-contain rounded-md bg-white p-1" style="border: 1px solid var(--border);">
+          <div>
+            <h3 class="text-xl font-semibold">William & Mary</h3>
+            <p style="color: var(--muted);">Graduate & Research Assistant</p>
+          </div>
+        </div>
+        <span class="text-sm" style="color: var(--muted);">Sep 2025 – Present</span>
+      </div>
+      <p style="color: var(--muted);" class="mt-2">
+        Applied data engineering and analytics research with Professors Seth Li and Rachel Chung.
+      </p>
+      <button class="impact-toggle mt-4 text-sm" style="color: var(--accent);">See what I built ▾</button>
+      <ul class="impact-list space-y-2 mt-3" style="color: var(--muted);">
+        <li>• Collaborated with Prof. Rachel Chung to debug, refactor, and validate Python and data-processing code used across multiple chapters of an AI textbook, improving correctness and reproducibility for student-facing examples.</li>
+        <li>• Worked with Prof. Seth Li to build Python-based web scraping pipelines to collect Amazon product metadata and customer reviews for purchase-behavior analysis.</li>
+        <li>• Extended Amazon data collection using SerpAPI, designing scalable ingestion workflows to extract richer review signals and behavioral features for downstream analytics.</li>
+        <li>• Supported exploratory analysis and feature engineering to study pricing sensitivity, product attributes, and consumer review patterns across categories.</li>
+      </ul>
+    </article>
+
+    <!-- Zakipoint Health -->
+    <article class="bg-card p-6 md:p-8 mb-8 rounded-2xl" style="border: 1px solid var(--border);">
+      <div class="flex flex-col md:flex-row md:justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <img src="images/zakipointhealth_logo.jpeg" class="w-12 h-12 object-contain rounded-md bg-white p-1" style="border: 1px solid var(--border);">
+          <div>
+            <h3 class="text-xl font-semibold">Zakipoint Health</h3>
+            <p style="color: var(--muted);">Senior Data Engineer</p>
+          </div>
+        </div>
+        <span class="text-sm" style="color: var(--muted);">Jul 2020 – Aug 2025</span>
+      </div>
+      <p style="color: var(--muted);" class="mt-2">
+        Petabyte-scale, HIPAA-compliant data platforms powering pricing, analytics, and ML for U.S. payers and providers.
+      </p>
+      <button class="impact-toggle mt-4 text-sm" style="color: var(--accent);">See what I built ▾</button>
+      <ul class="impact-list space-y-2 mt-3" style="color: var(--muted);">
+        <li>• Owned large-scale ETL/ELT pipelines processing 10+ TB/day of claims, eligibility, provider, and EHR data using PySpark, SQL, and AWS Glue.</li>
+        <li>• Architected and operated a Bronze → Silver → Gold S3 lakehouse with schema enforcement, idempotent merges, late-arriving data handling, and replay-safe backfills, reducing load failures by 60%.</li>
+        <li>• Built event-driven ingestion pipelines with Kafka, Kinesis, Lambda, and Step Functions, reducing end-to-end data latency from hours to under 5 minutes.</li>
+        <li>• Designed and optimized Redshift and Snowflake dimensional models (star/snowflake), tuning partitioning, sort keys, and distributions to achieve 40–55% faster BI queries.</li>
+        <li>• Built low-latency provider search and cost-estimation services using PostgreSQL and Elasticsearch, delivering sub-second responses for 50k+ users.</li>
+        <li>• Enabled production ML use cases (risk scoring, churn, cost prediction) by delivering feature-ready, longitudinal datasets and schema contracts, reducing model prep time by 40%.</li>
+        <li>• Implemented SLA monitoring, anomaly detection, and recovery workflows to maintain 99.8% pipeline uptime across mission-critical systems.</li>
+        <li>• Enforced HIPAA and SOC 2 controls through audit logging, IAM-based access policies, and secure data handling across batch and streaming workloads.</li>
+        <li>• Automated CI/CD for data pipelines using Airflow, dbt, Jenkins, Docker, and Kubernetes, enabling safe multi-environment deployments.</li>
+      </ul>
+    </article>
+
+    <!-- Om Hospital -->
+    <article class="bg-card p-6 md:p-8 mb-8 rounded-2xl" style="border: 1px solid var(--border);">
+      <div class="flex flex-col md:flex-row md:justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <img src="images/om_hospital_logo.jpg" class="w-12 h-12 object-contain rounded-md bg-white p-1" style="border: 1px solid var(--border);">
+          <div>
+            <h3 class="text-xl font-semibold">Om Hospital & Research Centre</h3>
+            <p style="color: var(--muted);">Data Engineer</p>
+          </div>
+        </div>
+        <span class="text-sm" style="color: var(--muted);">Apr 2018 – Jul 2020</span>
+      </div>
+      <p style="color: var(--muted);" class="mt-2">
+        Hospital-wide data modernization supporting 250K+ patient visits annually.
+      </p>
+      <button class="impact-toggle mt-4 text-sm" style="color: var(--accent);">See what I built ▾</button>
+      <ul class="impact-list space-y-2 mt-3" style="color: var(--muted);">
+        <li>• Led migration from paper and legacy systems to DHIS2, standardizing clinical and operational data for a high-volume hospital environment.</li>
+        <li>• Built the hospital’s first centralized data warehouse integrating patient visits, diagnoses, labs, and operational metrics into a unified reporting layer.</li>
+        <li>• Designed Python and SQL ETL pipelines replacing manual workflows, cutting daily data preparation time from ~3 hours to under 15 minutes.</li>
+        <li>• Implemented digital visit-recording and telemedicine systems, enabling longitudinal patient histories and supporting engagement with tens of thousands of patients per month.</li>
+        <li>• Developed dashboards in Tableau and Power BI to track patient flow and operational KPIs, reducing average wait times by 25%.</li>
+        <li>• Authored data governance, validation, and lineage documentation, improving onboarding speed and long-term system maintainability.</li>
+      </ul>
+    </article>
+  </section>
+
+
+  <!-- EDUCATION -->
+  <section id="education" class="py-16 md:py-20 reveal">
+    <h2 class="section-title">Education</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-4 mb-3">
+          <img src="images/william_and_mary.png" class="w-12 h-12 object-contain rounded-md bg-white p-1" style="border: 1px solid var(--border);">
+          <div>
+            <h3 class="text-lg font-semibold">William & Mary</h3>
+            <p class="text-sm" style="color: var(--muted);">Aug 2025 – May 2026</p>
+          </div>
+        </div>
+        <p class="font-medium">Master of Science, Business Analytics</p>
+        <p class="text-sm mt-1" style="color: var(--muted);">Raymond A. Mason School of Business</p>
+      </article>
+
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-4 mb-3">
+          <img src="images/vit_logo.jpeg" class="w-12 h-12 object-contain rounded-md bg-white p-1" style="border: 1px solid var(--border);">
+          <div>
+            <h3 class="text-lg font-semibold">Vellore Institute of Technology</h3>
+            <p class="text-sm" style="color: var(--muted);">Aug 2018 – May 2022</p>
+          </div>
+        </div>
+        <p class="font-medium">Bachelor of Technology, Computer Science</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-16 md:py-20 reveal">
+    <h2 class="section-title">Featured Projects</h2>
     
-    <!-- About Section -->
-    <main class="container mx-auto px-6 py-8 mt-24">
-        <section id="about" class="bg-gray-900 p-8 md:p-12 rounded-3xl shadow-lg border border-gray-800">
-            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-                <!-- Text Content on Left -->
-                <div class="md:w-3/5 text-center md:text-left">
-                    <h1 class="text-4xl sm:text-5xl font-extrabold text-teal-400 mb-4">
-                        Data Enginner & Analyst
-                    </h1>
-                    <p class="text-lg text-gray-400 mb-8">
-                        I’m Suyog Mainali, a Data Engineer passionate about designing scalable, analytics-ready data systems that bridge data engineering, ML, and healthcare intelligence. I build cloud-native ETL/ELT pipelines with Python, SQL, and Spark, orchestrated through Airflow and dbt, to deliver clean, secure, and governed datasets for analytics, BI, and AI applications. My focus is turning raw data—from claims, EHR, and consumer sources—into structured insights that power decision-making. I’m currently pursuing my MS in Business Analytics at William & Mary, where I combine statistical modeling, ML design, and data automation to solve real-world business and health data challenges.
-                    </p>
-                    <div class="space-x-4 flex justify-center md:justify-start">
-                        <a href="#projects" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
-                            View Projects
-                        </a>
-                        <a href="#contact" class="inline-block border border-gray-600 hover:border-teal-400 text-gray-300 hover:text-teal-400 font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
-                            Get In Touch
-                        </a>
-                    </div>
-                </div>
-                <!-- Image on Right -->
-                <div class="md:w-2/5 flex justify-center md:justify-end">
-                    <!-- Replace the placeholder URL with your actual image URL -->
-                    <img src="images\Mainali_Suyog_250818006.jpg" alt="Suyog Mainali" class="rounded-full shadow-lg border-4 border-gray-700 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover">
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-20">
-        <h2 class="text-4xl font-bold text-center mb-12 text-teal-400">Work Experience</h2>
-
-        <div id="experience-container" class="space-y-10 max-w-4xl mx-auto">
-
-            <!-- Graduate and Research Assistant -->
-            <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-8 md:p-10">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <!-- Left: logo + company -->
-                <div class="flex items-center gap-4">
-                <img src="images\william_and_mary.png" alt="William & Mary logo"
-                    class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                <h3 class="text-2xl md:text-3xl font-semibold leading-snug text-teal-300">
-                    William &amp; Mary
-                </h3>
-                </div>
-                <!-- Right: dates -->
-                <span class="shrink-0 text-sm md:text-base text-gray-300">Sep 2025 – Present</span>
-            </div>
-            <p class="mt-3 text-gray-400 font-medium">Graduate and Research Assistant</p>
-            <ul class="list-disc list-inside text-gray-400 space-y-2 mt-3">
-                <li>Managed the SONA system, ensuring smooth operation for research participants and studies.</li>
-                <li>Conducted research on the use of AI voice assistants in daily life, investigating user acceptance and rejection with Professor Seth Li.</li>
-            </ul>
-            </article>
-
-            <!-- Zakipoint Health -->
-            <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-8 md:p-10">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <!-- Left: logo + company -->
-                <div class="flex items-center gap-4">
-                <img src="images/zakipointhealth_logo.jpeg" alt="Zakipoint Health logo"
-                    class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                <h3 class="text-2xl md:text-3xl font-semibold leading-snug text-teal-300">
-                    Zakipoint Health
-                </h3>
-                </div>
-                <!-- Right: dates -->
-                <span class="shrink-0 text-sm md:text-base text-gray-300">Jul 2020 – Aug 2025</span>
-            </div>
-            <p class="mt-3 text-gray-400 font-medium">Senior Data Engineer / Scientist</p>
-            <ul class="list-disc list-inside text-gray-400 space-y-2 mt-3">
-                <li>Built and orchestrated end-to-end <span class="font-bold">ETL/ELT pipelines</span> using <span class="font-bold">Python, SQL, and PySpark</span> to integrate claims, eligibility, provider, and EHR data into <span class="font-bold">AWS S3 data lakes</span> under <span class="font-bold">HIPAA</span> and <span class="font-bold">SOC-2</span> compliance.</li>
-                <li>Developed and scheduled <span class="font-bold">Airflow DAGs</span> and <span class="font-bold">dbt transformations</span> for incremental modeling, testing, and validation, achieving <span class="font-bold">99.8% pipeline uptime</span> with <span class="font-bold">Jenkins CI/CD</span> and <span class="font-bold">Docker/Kubernetes</span> deployments.</li>
-                <li>Modeled analytics-ready warehouses in <span class="font-bold">Redshift</span> and <span class="font-bold">Snowflake</span>, optimizing <span class="font-bold">distribution and sort keys</span> for <span class="font-bold">40% faster query performance</span> and reduced compute cost.</li>
-                <li>Automated <span class="font-bold">data quality checks</span>, <span class="font-bold">lineage tracking</span>, and <span class="font-bold">PHI-access auditing</span> through Glue jobs and IAM policies, enabling reliable ingestion for <span class="font-bold">machine learning feature stores</span> and <span class="font-bold">BI dashboards</span>.</li>
-                <li>Developed <span class="font-bold">predictive risk models</span> using scikit-learn and TensorFlow to forecast readmission and utilization, improving care prediction accuracy by <span class="font-bold">38%</span>.</li>
-                <li>Delivered <span class="font-bold">real-time Power BI and Tableau dashboards</span> linked to Redshift for KPI tracking — engagement, claims accuracy, and care utilization — reducing report turnaround from <span class="font-bold">24 hours to near real-time</span>.</li>
-                <li>Deployed <span class="font-bold">monitoring and SLA tracking frameworks</span> with alerting on failed jobs, ensuring proactive recovery and <span class="font-bold">continuous delivery</span> of analytics data to stakeholders.</li>
-                <li>Led a <span class="font-bold">cross-functional data team</span> of analysts and engineers to modernize legacy pipelines, integrating <span class="font-bold">ML-ready datasets</span> across 20+ enterprise clients in payer and provider networks.</li>
-            </ul>
-            </article>
-
-            <!-- Om Hospital & Research Centre -->
-            <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-8 md:p-10">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <!-- Left: logo + company -->
-                <div class="flex items-center gap-4">
-                <img src="images\om_hospital_logo.jpg" alt="Om Hospital logo"
-                    class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                <h3 class="text-2xl md:text-3xl font-semibold leading-snug text-teal-300">
-                    Om Hospital &amp; Research Centre
-                </h3>
-                </div>
-                <!-- Right: dates -->
-                <span class="shrink-0 text-sm md:text-base text-gray-300">Apr 2018 – Jul 2020</span>
-            </div>
-            <p class="mt-3 text-gray-400 font-medium">Database Manager (Remote Full-Time)</p>
-            <ul class="list-disc list-inside text-gray-400 space-y-2 mt-3">
-                 <li>Migrated legacy hospital databases to <span class="font-bold">DHIS2</span>, implementing <span class="font-bold">Python and SQL ETL pipelines</span> for automated ingestion into <span class="font-bold">Azure ADLS</span> and <span class="font-bold">PostgreSQL</span> with strict validation controls.</li>
-                <li>Designed <span class="font-bold">dimensional data models (star schema)</span> for clinical and operational domains, improving query performance by <span class="font-bold">30%</span> and reducing redundancy across departments.</li>
-                <li>Built <span class="font-bold">predictive ML models</span> for patient risk scoring and outbreak forecasting using <span class="font-bold">R and scikit-learn</span>, optimizing resource allocation and improving planning efficiency by <span class="font-bold">20%</span>.</li>
-                <li>Developed <span class="font-bold">Tableau and Power BI dashboards</span> tracking KPIs, patient outcomes, and wait times, resulting in a <span class="font-bold">25% reduction</span> in average patient delays.</li>
-                <li>Implemented <span class="font-bold">data governance standards</span>, lineage documentation, and <span class="font-bold">access control policies</span> aligned with national health data protection regulations.</li>
-            </ul>
-            </article>
-
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-visible">
+      <!-- Project 1: $100 Question -->
+      <div class="project-card">
+        <img src="images/100-question-thumb.png" alt="$100 Question" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">$100 Question</h3>
+          <p class="text-sm mb-4" style="color: var(--muted);">Real-time data visualization dashboard built with Plotly Dash.</p>
+          <div class="flex gap-2 mb-4">
+            <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(99, 102, 241, 0.1); color: var(--accent); border: 1px solid var(--accent);">Deployed</span>
+          </div>
+          <div class="flex gap-2">
+            <a href="https://final-group-project-dash-app-team-9.onrender.com/" target="_blank" class="text-sm btn-primary">View Live</a>
+            <a href="https://github.com/suyog12/Final-Group-Project---Dash-App-Team-9" target="_blank" class="text-sm btn-secondary">GitHub</a>
+          </div>
         </div>
-        </section>
+      </div>
 
-        <!-- Education Section -->
-        <section id="education" class="py-20">
-        <h2 class="text-4xl font-bold text-center mb-12 text-teal-400">Education</h2>
-
-        <div class="max-w-4xl mx-auto space-y-10">
-
-            <!-- William & Mary -->
-            <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-8 md:p-10">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <!-- Left: logo + school -->
-                <div class="flex items-center gap-4">
-                <img src="images\william_and_mary.png" alt="William & Mary logo"
-                    class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                <h3 class="text-2xl md:text-3xl font-semibold leading-snug text-teal-300">
-                    William &amp; Mary, Raymond A. Mason School of Business
-                </h3>
-                </div>
-                <!-- Right: dates -->
-                <span class="shrink-0 text-sm md:text-base text-gray-300">Aug 2025 – May 2026</span>
-            </div>
-
-            <p class="mt-3 text-gray-400 font-medium">
-                Master of Science, Business Analytics
-            </p>
-            </article>
-
-            <!-- Vellore Institute of Technology -->
-            <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-8 md:p-10">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <!-- Left: logo + school -->
-                <div class="flex items-center gap-4">
-                <img src="images\vit_logo.jpeg" alt="VIT logo"
-                    class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                <h3 class="text-2xl md:text-3xl font-semibold leading-snug text-teal-300">
-                    Vellore Institute of Technology (VIT)
-                </h3>
-                </div>
-                <!-- Right: dates -->
-                <span class="shrink-0 text-sm md:text-base text-gray-300">Aug 2018 – May 2022</span>
-            </div>
-
-            <p class="mt-3 text-gray-400 font-medium">
-                Bachelor of Technology, Computer Science Engineering
-            </p>
-            </article>
-
+      <!-- Project 2: Siftline -->
+      <div class="project-card">
+        <img src="images/siftline-thumb.png" alt="Siftline" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Siftline – Document QA</h3>
+          <p class="text-sm mb-4" style="color: var(--muted);">Grounded Q&A and summarization for PDFs with hybrid retrieval.</p>
+          <div class="flex gap-2 mb-4 flex-wrap">
+            <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(99, 102, 241, 0.1); color: var(--accent); border: 1px solid var(--accent);">Demo</span>
+            <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(99, 102, 241, 0.1); color: var(--accent); border: 1px solid var(--accent);">LLMs</span>
+          </div>
+          <div class="flex gap-2">
+            <a href="https://shiftline.streamlit.app/" target="_blank" class="text-sm btn-primary">View Live</a>
+            <a href="https://github.com/suyog12/Siftline" target="_blank" class="text-sm btn-secondary">GitHub</a>
+          </div>
         </div>
-        </section>
+      </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20">
-        <h2 class="text-4xl font-bold text-center mb-10 text-teal-400">Featured Projects</h2>
-
-        <!-- VISIBLE: first 3 cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-            <!-- 1) $100 Question -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/100-question-thumb.png" alt="$100 Question thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button aria-label="About this project" class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-64 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    Plotly Dash app that streams macro data and compares scenarios with interactive charts.
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">$100 Question</h3>
-                <p class="text-gray-400">A real-time data visualization dashboard built with Plotly Dash.</p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs bg-emerald-900/40 border border-emerald-700 text-emerald-300">Deployed</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-sky-900/40 border border-sky-700 text-sky-300">In Git</span>
-                </div>
-            </div>
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <a href="https://final-group-project-dash-app-team-9.onrender.com/" target="_blank" class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium">View Live</a>
-                <a href="https://github.com/suyog12/Final-Group-Project---Dash-App-Team-9" target="_blank" class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium">View on GitHub</a>
-            </div>
-            </div>
-
-            <!-- 2) Siftline – Grounded Document QA (NEW) -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/siftline-thumb.png" alt="Siftline document QA thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button aria-label="About this project" class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-72 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    Private, grounded Q&amp;A and summarization for PDFs/DOCX/TXT. Hybrid retrieval (FAISS + TF-IDF), token-safe summaries, and LLM-based answers. Cloud-native and Agile-ready; Azure-deployable; demo live.
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">Siftline – Grounded Document QA</h3>
-                <p class="text-gray-400">
-                Streamlit app for precise, context-anchored answers and executive summaries. Built with Transformers, FAISS, and scikit-learn.
-                </p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <!-- Status -->
-                <span class="px-3 py-1 rounded-full text-xs bg-emerald-900/40 border border-emerald-700 text-emerald-300">Demo Deployed</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-sky-900/40 border border-sky-700 text-sky-300">In Git</span>
-                <!-- IMF-aligned keywords -->
-                <span class="px-3 py-1 rounded-full text-xs bg-indigo-900/40 border border-indigo-700 text-indigo-300">LLMs</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-fuchsia-900/40 border border-fuchsia-700 text-fuchsia-300">Generative AI</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-cyan-900/40 border border-cyan-700 text-cyan-300">Azure</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-slate-900/40 border border-slate-700 text-slate-300">Cloud-native</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-amber-900/40 border border-amber-700 text-amber-300">Agile</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-rose-900/40 border border-rose-700 text-rose-300">Security-minded</span>
-                </div>
-            </div>
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <a href="https://shiftline.streamlit.app/" target="_blank" class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium">View Live</a>
-                <a href="https://github.com/suyog12/Siftline" target="_blank" class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium">View on GitHub</a>
-            </div>
-            <div class="px-6 pb-6 pt-0 text-xs text-gray-400">
-                Status: demo version deployed; ongoing updates.
-            </div>
-            </div>
-
-            <!-- 3) Hybrid Encryption -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/hybrid-encryption.png" alt="Hybrid Encryption Thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button aria-label="About this project" class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <circle cx="12" cy="12" r="10" stroke-width="1.5" />
-                        <path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round" />
-                    </svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-64 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    Streamlit app showing hybrid encryption with AES-256-GCM and RSA-OAEP, live key generation, and JSON bundle output.
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">Hybrid Encryption</h3>
-                <p class="text-gray-400">AES-256-GCM for data, RSA-OAEP for key wrapping. Includes live key generation and in-memory decrypt tests.</p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs bg-emerald-900/40 border border-emerald-700 text-emerald-300">Deployed</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-sky-900/40 border border-sky-700 text-sky-300">In Git</span>
-                </div>
-            </div>
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <a href="https://hybridencryption.streamlit.app/" target="_blank" class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium">View Live</a>
-                <a href="https://github.com/suyog12/hybridEncryption" target="_blank" class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium">View on GitHub</a>
-            </div>
-            </div>
-
+      <!-- Project 3: Hybrid Encryption -->
+      <div class="project-card">
+        <img src="images/hybrid-encryption.png" alt="Hybrid Encryption" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Hybrid Encryption</h3>
+          <p class="text-sm mb-4" style="color: var(--muted);">AES-256-GCM + RSA-OAEP encryption demo with live key generation.</p>
+          <div class="flex gap-2 mb-4">
+            <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(99, 102, 241, 0.1); color: var(--accent); border: 1px solid var(--accent);">Deployed</span>
+          </div>
+          <div class="flex gap-2">
+            <a href="https://hybridencryption.streamlit.app/" target="_blank" class="text-sm btn-primary">View Live</a>
+            <a href="https://github.com/suyog12/hybridEncryption" target="_blank" class="text-sm btn-secondary">GitHub</a>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- HIDDEN: remaining projects -->
-        <div id="more-projects" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-
-            <!-- Amazon Reviews ETL Pipeline (SerpApi version) -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/amazon-reviews-serpapi-thumb.png" alt="Amazon Reviews ETL Pipeline (SerpApi) thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button aria-label="About this project" class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
-                        <path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-72 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    Full-stack ETL pipeline that automates extraction, validation, and database synchronization of 500K+ Amazon product listings using SerpApi, Playwright, and PostgreSQL. Includes Flask API, async scraping, retry logic, and modular architecture.
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">Amazon Reviews ETL Pipeline (SerpApi)</h3>
-                <p class="text-gray-400">
-                End-to-end data engineering project automating metadata and review extraction using SerpApi and Amazon PA-API, validated and stored in PostgreSQL via a Flask API service and ETL runner.
-                </p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs bg-emerald-900/40 border border-emerald-700 text-emerald-300">Production Ready</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-sky-900/40 border border-sky-700 text-sky-300">Python</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-indigo-900/40 border border-indigo-700 text-indigo-300">Flask</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-amber-900/40 border border-amber-700 text-amber-300">PostgreSQL</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-rose-900/40 border border-rose-700 text-rose-300">ETL Pipeline</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-purple-900/40 border border-purple-700 text-purple-300">SerpApi</span>
-                </div>
-            </div>
-
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <a href="https://github.com/suyog12/amazon_reviews_etl_pipeline_using_serpapi"
-                target="_blank"
-                class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium">
-                View on GitHub
-                </a>
-            </div>
-            </div>
-
-            <!--  Amazon Reviews ETL Pipeline -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/amazon-etl-thumb.png" alt="Amazon Reviews ETL Pipeline thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button aria-label="About this project" class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
-                        <path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-72 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    Fully automated ETL pipeline validating 500K+ Amazon product listings using Playwright, PostgreSQL, and async scraping with retry and resume logic.
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">Amazon Reviews ETL Pipeline</h3>
-                <p class="text-gray-400">
-                Asynchronous data validation system for Amazon product metadata. Automates extraction, validation, and database synchronization using Playwright and PostgreSQL.
-                </p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs bg-emerald-900/40 border border-emerald-700 text-emerald-300">Production Ready</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-sky-900/40 border border-sky-700 text-sky-300">Python</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-indigo-900/40 border border-indigo-700 text-indigo-300">Playwright</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-amber-900/40 border border-amber-700 text-amber-300">PostgreSQL</span>
-                <span class="px-3 py-1 rounded-full text-xs bg-rose-900/40 border border-rose-700 text-rose-300">Async ETL</span>
-                </div>
-            </div>
-
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <a href="https://github.com/suyog12/Amazon-Reviews-ETL-Pipeline" target="_blank"
-                class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium">
-                View on GitHub
-                </a>
-            </div>
-            </div>
-
-            <!-- FRED Dashboard -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/mini_finance_dashboard.png" alt="FRED Dashboard thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-64 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    Python + FRED API with clean transforms and clear visuals.
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">FRED Dashboard</h3>
-                <p class="text-gray-400">Macro data analysis and visualization using the FRED API.</p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs bg-sky-900/40 border border-sky-700 text-sky-300">In Git</span>
-                </div>
-            </div>
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <a href="https://github.com/suyog12/CBTA-Fred-Dashboard-Team-9" target="_blank" class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium">View on GitHub</a>
-            </div>
-            </div>
-
-            <!-- Smart Traffic Light -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/smart_traffic_light.jpg" alt="Smart Traffic Light thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-72 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    Microcontroller + sensors to optimize signal timing; simulation and code in repo.
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">Smart Traffic Light</h3>
-                <p class="text-gray-400">Smart signals that adapt to traffic density using sensor input.</p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs bg-sky-900/40 border border-sky-700 text-sky-300">In Git</span>
-                </div>
-            </div>
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <a href="https://github.com/iipacii/Smart-Traffic-Light" target="_blank" class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium">View on GitHub</a>
-            </div>
-            </div>
-
-            <!-- Mental Health Assessment -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/mental_health.jpg" alt="Mental Health Assessment thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-72 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    ML questionnaire tracking answers over time; produces an assessment & trend.
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">Mental Health Assessment Application</h3>
-                <p class="text-gray-400">Guided Q&amp;A with scoring, history, and privacy-first storage.</p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs bg-amber-900/40 border border-amber-700 text-amber-300">In Research</span>
-                </div>
-            </div>
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <button disabled class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-gray-800 text-gray-400 border border-gray-700 cursor-not-allowed">View Live</button>
-                <button disabled class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-700 text-gray-400 cursor-not-allowed">View on GitHub</button>
-            </div>
-            </div>
-
-            <!-- Careerknotics -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/careerknotics.jpg" alt="Careerknotics thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-72 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    Unified career portal: HRMS, postings, applications, transfers, and payroll.
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">Careerknotics</h3>
-                <p class="text-gray-400">All-in-one career platform for a full work lifecycle.</p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs bg-amber-900/40 border border-amber-700 text-amber-300">In Research</span>
-                </div>
-            </div>
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <button disabled class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-gray-800 text-gray-400 border border-gray-700 cursor-not-allowed">View Live</button>
-                <button disabled class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-700 text-gray-400 cursor-not-allowed">View on GitHub</button>
-            </div>
-            </div>
-
-            <!-- Python ETL Processing -->
-            <div class="group relative bg-gray-900 rounded-3xl shadow-lg border border-gray-800 overflow-hidden flex flex-col h-full">
-            <div class="relative">
-                <img src="images/etl.jpg" alt="Python ETL Processing thumbnail" class="w-full h-44 object-cover">
-                <div class="absolute top-3 right-3">
-                <div class="relative">
-                    <button class="w-9 h-9 rounded-full bg-gray-800/80 backdrop-blur border border-gray-700 text-gray-200 flex items-center justify-center hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M12 8h.01M11 12h1v4h1" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </button>
-                    <div class="pointer-events-none absolute right-0 mt-2 w-72 rounded-xl bg-gray-800/95 text-gray-200 text-sm p-3 border border-gray-700 opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
-                    Upload CSV → clean nulls → load to new/existing DB with guided steps.
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-2xl font-semibold text-teal-300">Python ETL Processing</h3>
-                <p class="text-gray-400">CSV ingestion and DB load with basic QC in a browser dashboard.</p>
-                <div class="mt-1 flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs bg-amber-900/40 border border-amber-700 text-amber-300">In Research</span>
-                </div>
-            </div>
-            <div class="mt-auto p-6 pt-0 flex gap-3">
-                <button disabled class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-gray-800 text-gray-400 border border-gray-700 cursor-not-allowed">View Live</button>
-                <button disabled class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-700 text-gray-400 cursor-not-allowed">View on GitHub</button>
-            </div>
-            </div>
-
+    <!-- Hidden projects -->
+    <div class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="projects-hidden">
+      <!-- Amazon Reviews ETL (SerpApi) -->
+      <div class="project-card">
+        <img src="images/amazon-reviews-serpapi-thumb.png" alt="Amazon Reviews ETL" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Amazon Reviews ETL (SerpApi)</h3>
+          <p class="text-sm mb-4" style="color: var(--muted);">Full-stack ETL pipeline with 500K+ product listings using SerpApi.</p>
+          <div class="flex gap-2 mb-4">
+            <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(99, 102, 241, 0.1); color: var(--accent); border: 1px solid var(--accent);">Production</span>
+          </div>
+          <div class="flex gap-2">
+            <a href="https://github.com/suyog12/amazon_reviews_etl_pipeline_using_serpapi" target="_blank" class="text-sm btn-primary">GitHub</a>
+          </div>
         </div>
+      </div>
 
-        <!-- Toggle button at the very bottom -->
-        <div class="text-center mt-10">
-            <button id="toggle-projects" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-gray-700 text-gray-200 hover:text-teal-300 hover:border-teal-400">
-            View More Projects
-            </button>
+      <!-- Amazon Reviews ETL -->
+      <div class="project-card">
+        <img src="images/amazon-etl-thumb.png" alt="Amazon ETL" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Amazon Reviews ETL</h3>
+          <p class="text-sm mb-4" style="color: var(--muted);">Async validation system with Playwright and PostgreSQL.</p>
+          <div class="flex gap-2 mb-4">
+            <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(99, 102, 241, 0.1); color: var(--accent); border: 1px solid var(--accent);">Production</span>
+          </div>
+          <div class="flex gap-2">
+            <a href="https://github.com/suyog12/Amazon-Reviews-ETL-Pipeline" target="_blank" class="text-sm btn-primary">GitHub</a>
+          </div>
         </div>
-        </section>
+      </div>
 
-        <script>
-        const btn  = document.getElementById('toggle-projects');
-        const more = document.getElementById('more-projects');
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        function showWithAnimation(container) {
-            container.classList.remove('hidden');
-            const cards = Array.from(container.children);
-            if (reduceMotion) {
-            cards.forEach(card => { card.style.transition = 'none'; card.style.opacity = '1'; card.style.transform = 'none'; });
-            return;
-            }
-            cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(12px) scale(0.98)';
-            card.style.willChange = 'opacity, transform';
-            });
-            cards.forEach((card, i) => {
-            const delay = 70 * i;
-            setTimeout(() => {
-                card.style.transition = 'opacity 380ms ease, transform 420ms ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0) scale(1)';
-                card.addEventListener('transitionend', () => {
-                card.style.willChange = '';
-                card.style.transition = '';
-                card.style.transform = '';
-                card.style.opacity = '';
-                }, { once: true });
-            }, delay);
-            });
-        }
-
-        function hideWithAnimation(container) {
-            const cards = Array.from(container.children).reverse();
-            if (reduceMotion) {
-            container.classList.add('hidden');
-            return;
-            }
-            let completed = 0;
-            cards.forEach((card, i) => {
-            const delay = 50 * i;
-            setTimeout(() => {
-                card.style.transition = 'opacity 260ms ease, transform 260ms ease';
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(8px) scale(0.985)';
-                card.addEventListener('transitionend', () => {
-                completed += 1;
-                if (completed === cards.length) {
-                    container.classList.add('hidden');
-                    cards.forEach(c => { c.style.transition = ''; c.style.opacity = ''; c.style.transform = ''; });
-                }
-                }, { once: true });
-            }, delay);
-            });
-        }
-
-        btn?.addEventListener('click', () => {
-            const isHidden = more.classList.contains('hidden');
-            if (isHidden) {
-            showWithAnimation(more);
-            btn.textContent = 'View Less Projects';
-            btn.setAttribute('aria-expanded', 'true');
-            } else {
-            hideWithAnimation(more);
-            btn.textContent = 'View More Projects';
-            btn.setAttribute('aria-expanded', 'false');
-            }
-        });
-        </script>
-
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="py-20">
-        <h2 class="text-4xl font-bold text-center mb-12 text-teal-400">Certifications</h2>
-
-        <div class="max-w-5xl mx-auto space-y-12">
-
-            <!-- Professional Certifications -->
-            <div>
-            <h3 class="text-2xl font-semibold text-teal-300 mb-6">Professional Certifications</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                <!-- Google Data Analytics -->
-                <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-6">
-                <div class="flex items-start justify-between gap-3">
-                    <div class="flex items-center gap-4">
-                    <img src="images\google-logo.png" alt="Google logo"
-                        class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                    <div>
-                        <h4 class="text-xl font-semibold text-teal-300">Google Data Analytics</h4>
-                        <p class="text-gray-400 text-sm">Google · Coursera Professional Certificate</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/BLT5E7F8NUT9"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                    View Certificate
-                    </a>
-                </div>
-                </article>
-
-                <!-- Data Analysis with R (Duke) -->
-                <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-6">
-                <div class="flex items-start justify-between gap-3">
-                    <div class="flex items-center gap-4">
-                    <img src="images\duke-logo.png" alt="Duke University logo"
-                        class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                    <div>
-                        <h4 class="text-xl font-semibold text-teal-300">Data Analysis with R</h4>
-                        <p class="text-gray-400 text-sm">Duke University · Coursera Specialization</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="https://www.coursera.org/account/accomplishments/specialization/59WJ75V8402C"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                    View Certificate
-                    </a>
-                </div>
-                </article>
-
-            </div>
-            </div>
-
-            <!-- Course Certifications -->
-            <div>
-            <h3 class="text-2xl font-semibold text-teal-300 mb-6">Course Certifications</h3>
-
-            <!-- visible first 3 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- Intro to Marketing (UPenn) -->
-                <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-6 flex flex-col">
-                <div class="flex items-center gap-4">
-                    <img src="images\upenn-logo.png" alt="University of Pennsylvania logo"
-                        class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                    <div>
-                    <h4 class="text-lg font-semibold text-teal-300">Introduction to Marketing</h4>
-                    <p class="text-gray-400 text-sm">University of Pennsylvania</p>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/6V4OA0Z3WCF5"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                    View Certificate
-                    </a>
-                </div>
-                </article>
-
-                <!-- Intro to Operations Management (UPenn) -->
-                <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-6 flex flex-col">
-                <div class="flex items-center gap-4">
-                    <img src="images\upenn-logo.png" alt="University of Pennsylvania logo"
-                        class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                    <div>
-                    <h4 class="text-lg font-semibold text-teal-300">Introduction to Operations Management</h4>
-                    <p class="text-gray-400 text-sm">University of Pennsylvania</p>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/LVF3XRVF82QD"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                    View Certificate
-                    </a>
-                </div>
-                </article>
-
-                <!-- Intro to Financial Accounting (UPenn) -->
-                <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-6 flex flex-col">
-                <div class="flex items-center gap-4">
-                    <img src="images\upenn-logo.png" alt="University of Pennsylvania logo"
-                        class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                    <div>
-                    <h4 class="text-lg font-semibold text-teal-300">Introduction to Financial Accounting</h4>
-                    <p class="text-gray-400 text-sm">University of Pennsylvania</p>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/XPL2KL69NY77"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                    View Certificate
-                    </a>
-                </div>
-                </article>
-            </div>
-
-            <!-- hidden rest -->
-            <div id="course-more" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-
-                <!-- Intro to Corporate Finance (UPenn) -->
-                <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-6 flex flex-col">
-                <div class="flex items-center gap-4">
-                    <img src="images\upenn-logo.png" alt="University of Pennsylvania logo"
-                        class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                    <div>
-                    <h4 class="text-lg font-semibold text-teal-300">Introduction to Corporate Finance</h4>
-                    <p class="text-gray-400 text-sm">University of Pennsylvania</p>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/QJX6QA5RYEJS"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                    View Certificate
-                    </a>
-                </div>
-                </article>
-
-                <!-- Front-End Web Development with React (HKUST) -->
-                <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-6 flex flex-col">
-                <div class="flex items-center gap-4">
-                    <img src="images\hkust.png" alt="HKUST logo"
-                        class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                    <div>
-                    <h4 class="text-lg font-semibold text-teal-300">Front-End Web Development with React</h4>
-                    <p class="text-gray-400 text-sm">The Hong Kong University of Science and Technology</p>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/CJSX7HF48KTJ"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                    View Certificate
-                    </a>
-                </div>
-                </article>
-
-                <!-- Introduction to Software Testing (UMN) -->
-                <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-6 flex flex-col">
-                <div class="flex items-center gap-4">
-                    <img src="images\University-of-Minnesota-Logo.png" alt="University of Minnesota logo"
-                        class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                    <div>
-                    <h4 class="text-lg font-semibold text-teal-300">Introduction to Software Testing</h4>
-                    <p class="text-gray-400 text-sm">University of Minnesota</p>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/WL2E278C3V6A"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                    View Certificate
-                    </a>
-                </div>
-                </article>
-
-                <!-- Fundamentals of Parallelism on Intel Architecture -->
-                <article class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg p-6 flex flex-col">
-                <div class="flex items-center gap-4">
-                    <img src="images\intel-logo.png" alt="Intel logo"
-                        class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-md bg-gray-800/40 p-1 border border-gray-700" />
-                    <div>
-                    <h4 class="text-lg font-semibold text-teal-300">Fundamentals of Parallelism on Intel Architecture</h4>
-                    <p class="text-gray-400 text-sm">Intel</p>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/PJPZWNTU5KEL"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                    View Certificate
-                    </a>
-                </div>
-                </article>
-
-            </div>
-
-            <!-- toggle button -->
-            <div class="text-center mt-8">
-                <button id="toggle-course-certs"
-                class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-gray-700 text-gray-200 hover:text-teal-300 hover:border-teal-400">
-                View More
-                </button>
-            </div>
-            </div>
+      <!-- FRED Dashboard -->
+      <div class="project-card">
+        <img src="images/mini_finance_dashboard.png" alt="FRED Dashboard" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">FRED Dashboard</h3>
+          <p class="text-sm mb-4" style="color: var(--muted);">Macro data analysis using the FRED API with visualizations.</p>
+          <div class="flex gap-2 mb-4">
+            <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(99, 102, 241, 0.1); color: var(--accent); border: 1px solid var(--accent);">Complete</span>
+          </div>
+          <div class="flex gap-2">
+            <a href="https://github.com/suyog12/CBTA-Fred-Dashboard-Team-9" target="_blank" class="text-sm btn-primary">GitHub</a>
+          </div>
         </div>
-        </section>
+      </div>
+    </div>
 
-        <!-- Toggle Script -->
-        <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        const btn = document.getElementById('toggle-course-certs');
-        const more = document.getElementById('course-more');
+    <div class="text-center mt-10">
+      <button id="toggle-projects" class="btn-secondary">View More Projects</button>
+    </div>
+  </section>
 
-        if (!btn || !more) return;
-
-        btn.addEventListener('click', () => {
-            const isHidden = more.classList.contains('hidden');
-            more.classList.toggle('hidden');
-            btn.textContent = isHidden ? 'View Less' : 'View More';
-            btn.setAttribute('aria-expanded', String(isHidden));
-
-            // Animate on expand
-            if (isHidden) {
-            more.querySelectorAll('article').forEach((card, i) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(8px)';
-                card.style.transition = 'opacity 250ms ease, transform 300ms ease';
-                setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-                }, i * 70);
-            });
-            }
-        });
-        });
-        </script>
-
-        <!-- Core Skills Section -->
-        <section id="skills" class="py-20">
-        <h2 class="text-4xl font-bold text-center mb-12 text-teal-400">Core Skills</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6">
-
-            <!-- Data Engineering -->
-            <div class="rounded-2xl shadow-lg p-6 border border-gray-700 hover:shadow-teal-500/10 transition">
-            <h3 class="text-2xl font-semibold text-teal-300 mb-4">Data Engineering & Databases</h3>
-            <ul class="space-y-2 text-gray-300">
-                <li>SQL, MySQL, PostgreSQL, Hive, Impala</li>
-                <li>Spark, Hadoop, Airflow, dbt</li>
-                <li>ETL / ELT Pipelines, Data Warehousing, Data Modeling</li>
-                <li>MongoDB, ElasticSearch, Snowflake</li>
-                <li>AWS Glue, Big Data Processing</li>
-            </ul>
-            </div>
-
-            <!-- Machine Learning -->
-            <div class="rounded-2xl shadow-lg p-6 border border-gray-700 hover:shadow-teal-500/10 transition">
-            <h3 class="text-2xl font-semibold text-teal-300 mb-4">Machine Learning & Predictive Modeling</h3>
-            <ul class="space-y-2 text-gray-300">
-                <li>Linear & Logistic Regression, Classification, Clustering</li>
-                <li>Neural Networks, Decision Trees, Feature Engineering</li>
-                <li>Model Evaluation, Cross Validation, Hyperparameter Tuning</li>
-                <li>Scikit-learn, TensorFlow, Keras, XGBoost, PyTorch</li>
-                <li>Stochastic Modeling, Optimization Techniques</li>
-            </ul>
-            </div>
-
-            <!-- Optimization -->
-            <div class="rounded-2xl shadow-lg p-6 border border-gray-700 hover:shadow-teal-500/10 transition">
-            <h3 class="text-2xl font-semibold text-teal-300 mb-4">Optimization & Operations Research</h3>
-            <ul class="space-y-2 text-gray-300">
-                <li>Linear Programming, Integer Programming, Sensitivity Analysis</li>
-                <li>Objective Functions, Constraints, Range of Feasibility</li>
-                <li>Monte Carlo Simulation, Expected Value Analysis</li>
-                <li>Gurobi, PuLP, Python Optimization Libraries</li>
-                <li>Real-World Applications in Production Planning & Decision Modeling</li>
-            </ul>
-            </div>
-
-            <!-- Data Analytics -->
-            <div class="rounded-2xl shadow-lg p-6 border border-gray-700 hover:shadow-teal-500/10 transition">
-            <h3 class="text-2xl font-semibold text-teal-300 mb-4">Data Analytics & Visualization</h3>
-            <ul class="space-y-2 text-gray-300">
-                <li>Exploratory & Descriptive Analysis, Hypothesis Testing</li>
-                <li>Probability, Correlation, Regression, Forecasting</li>
-                <li>Tableau, Power BI, Dash, Streamlit, Looker</li>
-                <li>Matplotlib, Seaborn, Plotly, Excel</li>
-                <li>US Healthcare Data Analytics & KPI Dashboards</li>
-            </ul>
-            </div>
-
-            <!-- Programming -->
-            <div class="rounded-2xl shadow-lg p-6 border border-gray-700 hover:shadow-teal-500/10 transition">
-            <h3 class="text-2xl font-semibold text-teal-300 mb-4">Programming & APIs</h3>
-            <ul class="space-y-2 text-gray-300">
-                <li>Python, Java, R, Bash, Git, GitHub</li>
-                <li>REST API, FastAPI, JSON Data Exchange</li>
-                <li>Pandas, NumPy, Data Cleaning & Transformation</li>
-                <li>Object-Oriented Programming & Modular Code Design</li>
-                <li>CI/CD Automation with GitHub Actions</li>
-            </ul>
-            </div>
-
-            <!-- Cloud & DevOps -->
-            <div class="rounded-2xl shadow-lg p-6 border border-gray-700 hover:shadow-teal-500/10 transition">
-            <h3 class="text-2xl font-semibold text-teal-300 mb-4">Cloud, DevOps & Tools</h3>
-            <ul class="space-y-2 text-gray-300">
-                <li>AWS (S3, EC2, Lambda), GCP (BigQuery, Vertex AI)</li>
-                <li>Docker, Kubernetes, Containerization</li>
-                <li>MongoDB, ElasticSearch Integration</li>
-                <li>Version Control & Collaboration (Git / GitHub)</li>
-                <li>Continuous Integration / Deployment Pipelines</li>
-            </ul>
-            </div>
-
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="py-16 md:py-20 reveal">
+    <h2 class="section-title">Certifications</h2>
+    
+    <!-- Professional -->
+    <h3 class="text-xl font-semibold mb-6" style="color: var(--accent);">Professional Certifications</h3>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-4 mb-4">
+          <img src="images/google-logo.png" class="w-10 h-10 object-contain">
+          <div>
+            <h4 class="font-semibold">Google Data Analytics</h4>
+            <p class="text-sm" style="color: var(--muted);">Google · Coursera</p>
+          </div>
         </div>
-        </section>
+        <a href="https://www.coursera.org/account/accomplishments/professional-cert/BLT5E7F8NUT9" target="_blank" class="text-sm btn-secondary">View Certificate</a>
+      </article>
 
-        <!-- Resume Section -->
-        <section id="resume" class="py-20">
-        <h2 class="text-4xl font-bold text-center mb-10 text-teal-400">Resume</h2>
-
-        <div class="max-w-2xl mx-auto">
-            <div class="bg-gray-900 p-10 rounded-3xl shadow-lg border border-gray-800 text-center">
-            <p class="text-gray-400 mb-6">
-                You can download my full resume below for more details on my experience and skills.
-            </p>
-            <div class="flex justify-center space-x-4">
-                <!-- Download Button -->
-                <a href="files\Suyog Mainali Resume Data Engineer ML_AI.pdf" download
-                class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium shadow-md transition">
-                Download Resume
-                </a>
-                <!-- Preview Button -->
-                <a href="files\Suyog Mainali Resume Data Engineer ML_AI.pdf" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-600 hover:border-teal-400 text-gray-200 hover:text-teal-300 font-medium transition">
-                Preview Resume
-                </a>
-            </div>
-            </div>
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-4 mb-4">
+          <img src="images/duke-logo.png" class="w-10 h-10 object-contain">
+          <div>
+            <h4 class="font-semibold">Data Analysis with R</h4>
+            <p class="text-sm" style="color: var(--muted);">Duke University · Coursera</p>
+          </div>
         </div>
-        </section>
+        <a href="https://www.coursera.org/account/accomplishments/specialization/59WJ75V8402C" target="_blank" class="text-sm btn-secondary">View Certificate</a>
+      </article>
+    </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 text-center">
-        <h2 class="text-4xl font-bold mb-6 text-teal-400">Get In Touch</h2>
-        <p class="text-lg text-gray-400 max-w-xl mx-auto mb-8">
-            I'm currently seeking new opportunities.<br> Feel free to connect with me to discuss database projects, career opportunities, or just to say hello.
-        </p>
-
-        <div class="contact-info space-y-4 mb-8">
-            <p>
-            <a href="mailto:mainalisuyog0@gmail.com" class="text-gray-400 hover:text-teal-400 transition-colors">mainalisuyog0@gmail.com</a>
-            <span class="text-gray-600 mx-2">/</span>
-            <a href="mailto:smainali01@wm.edu" class="text-gray-400 hover:text-teal-400 transition-colors">smainali01@wm.edu</a>
-            </p>
-            <p>
-            <a href="tel:+17572068339" class="text-gray-400 hover:text-teal-400 transition-colors">+1-757-206-8339</a>
-            </p>
+    <!-- Course Certs -->
+    <h3 class="text-xl font-semibold mb-6" style="color: var(--accent);">Course Certifications</h3>
+    <div class="grid md:grid-cols-3 gap-6" id="certs-visible">
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="images/upenn-logo.png" class="w-10 h-10 object-contain">
+          <div>
+            <h4 class="font-semibold text-sm">Intro to Marketing</h4>
+            <p class="text-xs" style="color: var(--muted);">UPenn</p>
+          </div>
         </div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/6V4OA0Z3WCF5" target="_blank" class="text-xs btn-secondary">View</a>
+      </article>
 
-        <div class="flex justify-center space-x-6 text-2xl">
-        <!-- GitHub Icon -->
-        <a href="https://github.com/suyog12" target="_blank" class="icon-link text-gray-400 hover:text-teal-400 transition-colors duration-200" aria-label="GitHub Profile">
-            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.417 2.865 8.163 6.83 9.487.5.088.68-.232.68-.518 0-.256-.015-.93-.015-1.85 0-.613.207-1.168.56-1.564-.86-.186-1.764-.428-1.764-.428-1.428-1.353-2.616-1.808-2.616-1.808-1.07-.75-.08-.735-.08-.735.808.056 1.23.834 1.23.834.72 1.233 1.88.875 2.336.666.072-.518.28-.875.508-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.875.31-1.59.818-2.15-.082-.2-.356-1.018.077-2.112 0 0 .668-.215 2.18.82.634-.176 1.308-.264 1.98-.267.672.003 1.346.091 1.98.267 1.512-1.035 2.18-.82 2.18-.82.434 1.094.16 1.912.078 2.112.508.56.818 1.275.818 2.15 0 3.073-1.868 3.753-3.65 3.945.29.25.55.73.55 1.472 0 1.07-.015 1.94-.015 2.213 0 .288.18.608.688.512C19.135 20.177 22 16.432 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-            </svg>
-        </a>
-
-        <!-- LinkedIn Icon -->
-        <a href="https://www.linkedin.com/in/suyog41/" target="_blank" class="icon-link text-gray-400 hover:text-teal-400 transition-colors duration-200" aria-label="LinkedIn Profile">
-            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.75h4.55V24H.22V8.75zM8.72 8.75h4.36v2.08h.06c.61-1.15 2.11-2.37 4.34-2.37 4.64 0 5.49 3.05 5.49 7.02V24h-4.54v-7.45c0-1.78-.03-4.07-2.49-4.07-2.5 0-2.88 1.95-2.88 3.95V24H8.72V8.75z"/>
-            </svg>
-        </a>
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="images/upenn-logo.png" class="w-10 h-10 object-contain">
+          <div>
+            <h4 class="font-semibold text-sm">Intro to Operations Mgmt</h4>
+            <p class="text-xs" style="color: var(--muted);">UPenn</p>
+          </div>
         </div>
-        </section>
+        <a href="https://www.coursera.org/account/accomplishments/verify/LVF3XRVF82QD" target="_blank" class="text-xs btn-secondary">View</a>
+      </article>
 
-    </main>
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="images/upenn-logo.png" class="w-10 h-10 object-contain">
+          <div>
+            <h4 class="font-semibold text-sm">Financial Accounting</h4>
+            <p class="text-xs" style="color: var(--muted);">UPenn</p>
+          </div>
+        </div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/XPL2KL69NY77" target="_blank" class="text-xs btn-secondary">View</a>
+      </article>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-6 text-center border-t border-gray-800">
-        <p class="text-gray-500 text-sm">&copy; 2025 Suyog Mainali. All Rights Reserved.</p>
-    </footer>
+    <div class="hidden grid-cols-1 md:grid-cols-3 gap-6 mt-6" id="certs-hidden">
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="images/upenn-logo.png" class="w-10 h-10 object-contain">
+          <div>
+            <h4 class="font-semibold text-sm">Corporate Finance</h4>
+            <p class="text-xs" style="color: var(--muted);">UPenn</p>
+          </div>
+        </div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/QJX6QA5RYEJS" target="_blank" class="text-xs btn-secondary">View</a>
+      </article>
 
-    <script>
-       
-    </script>
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="images/hkust.png" class="w-10 h-10 object-contain">
+          <div>
+            <h4 class="font-semibold text-sm">React Development</h4>
+            <p class="text-xs" style="color: var(--muted);">HKUST</p>
+          </div>
+        </div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/CJSX7HF48KTJ" target="_blank" class="text-xs btn-secondary">View</a>
+      </article>
+
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="images/University-of-Minnesota-Logo.png" class="w-10 h-10 object-contain">
+          <div>
+            <h4 class="font-semibold text-sm">Software Testing</h4>
+            <p class="text-xs" style="color: var(--muted);">UMN</p>
+          </div>
+        </div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/WL2E278C3V6A" target="_blank" class="text-xs btn-secondary">View</a>
+      </article>
+    </div>
+
+    <div class="text-center mt-8">
+      <button id="toggle-certs" class="btn-secondary">View More Certifications</button>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-16 md:py-20 reveal">
+    <h2 class="section-title">Core Skills</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <h3 class="text-lg font-semibold mb-4" style="color: var(--accent);">ML Enablement</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--muted);">
+          <li>• Feature engineering and feature pipelines</li>
+          <li>• Training and inference data preparation</li>
+          <li>• Time-series and longitudinal healthcare data</li>
+          <li>• Model input validation and data consistency</li>
+          <li>• Collaboration with data science teams</li>
+        </ul>
+      </article>
+
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <h3 class="text-lg font-semibold mb-4" style="color: var(--accent);">Machine Learning</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--muted);">
+          <li>• Classification, Regression, Clustering</li>
+          <li>• Neural Networks, Decision Trees</li>
+          <li>• Feature Engineering, Model Tuning</li>
+          <li>• scikit-learn, TensorFlow, PyTorch</li>
+          <li>• Stochastic Modeling, Optimization</li>
+        </ul>
+      </article>
+
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <h3 class="text-lg font-semibold mb-4" style="color: var(--accent);">Data Analytics</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--muted);">
+          <li>• Statistical Analysis, Hypothesis Testing</li>
+          <li>• Tableau, Power BI, Looker</li>
+          <li>• Matplotlib, Seaborn, Plotly</li>
+          <li>• Healthcare Analytics & KPI Dashboards</li>
+          <li>• Predictive & Forecasting Models</li>
+        </ul>
+      </article>
+
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <h3 class="text-lg font-semibold mb-4" style="color: var(--accent);">Programming</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--muted);">
+          <li>• Python, R, Java, Bash</li>
+          <li>• REST API, FastAPI, JSON</li>
+          <li>• Pandas, NumPy, Data Cleaning</li>
+          <li>• Git, GitHub, Version Control</li>
+          <li>• OOP, Modular Code Design</li>
+        </ul>
+      </article>
+
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <h3 class="text-lg font-semibold mb-4" style="color: var(--accent);">Cloud & DevOps</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--muted);">
+          <li>• AWS (S3, EC2, Lambda, Glue)</li>
+          <li>• Azure (Data Factory, ADLS)</li>
+          <li>• Docker, Kubernetes, Jenkins</li>
+          <li>• CI/CD Automation</li>
+          <li>• Terraform, Infrastructure as Code</li>
+        </ul>
+      </article>
+
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <h3 class="text-lg font-semibold mb-4" style="color: var(--accent);">Optimization</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--muted);">
+          <li>• Linear & Integer Programming</li>
+          <li>• Sensitivity Analysis</li>
+          <li>• Monte Carlo Simulation</li>
+          <li>• Gurobi, PuLP Optimization</li>
+          <li>• Production Planning & Decision Models</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" class="py-16 md:py-20 reveal">
+    <h2 class="section-title">Résumé</h2>
+    <div class="max-w-2xl mx-auto bg-card p-10 rounded-2xl text-center" style="border: 1px solid var(--border);">
+      <p class="mb-6" style="color: var(--muted);">Download my full résumé for more details on my experience and skills.</p>
+      <div class="flex justify-center gap-4">
+        <a href="files/Suyog Mainali Resume Data Engineer ML_AI.pdf" download class="btn-primary">Download Resume</a>
+        <a href="files/Suyog Mainali Resume Data Engineer ML_AI.pdf" target="_blank" class="btn-secondary">Preview Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 md:py-20 reveal text-center">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="text-lg mb-8 max-w-xl mx-auto" style="color: var(--muted);">
+      I'm currently seeking new opportunities. Feel free to connect with me to discuss data engineering projects or career opportunities.
+    </p>
+    <div class="space-y-3 mb-8">
+      <p>
+        <a href="mailto:mainalisuyog0@gmail.com" class="hover:underline" style="color: var(--accent);">mainalisuyog0@gmail.com</a>
+        <span style="color: var(--muted);"> / </span>
+        <a href="mailto:smainali01@wm.edu" class="hover:underline" style="color: var(--accent);">smainali01@wm.edu</a>
+      </p>
+      <p>
+        <a href="tel:+17572068339" class="hover:underline" style="color: var(--accent);">+1-757-206-8339</a>
+      </p>
+    </div>
+    <div class="flex justify-center gap-6">
+      <a href="https://github.com/suyog12" target="_blank" class="text-3xl hover:scale-110 transition-transform" style="color: var(--accent);">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.417 2.865 8.163 6.83 9.487.5.088.68-.232.68-.518 0-.256-.015-.93-.015-1.85 0-.613.207-1.168.56-1.564-.86-.186-1.764-.428-1.764-.428-1.428-1.353-2.616-1.808-2.616-1.808-1.07-.75-.08-.735-.08-.735.808.056 1.23.834 1.23.834.72 1.233 1.88.875 2.336.666.072-.518.28-.875.508-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.875.31-1.59.818-2.15-.082-.2-.356-1.018.077-2.112 0 0 .668-.215 2.18.82.634-.176 1.308-.264 1.98-.267.672.003 1.346.091 1.98.267 1.512-1.035 2.18-.82 2.18-.82.434 1.094.16 1.912.078 2.112.508.56.818 1.275.818 2.15 0 3.073-1.868 3.753-3.65 3.945.29.25.55.73.55 1.472 0 1.07-.015 1.94-.015 2.213 0 .288.18.608.688.512C19.135 20.177 22 16.432 22 12.017 22 6.484 17.522 2 12 2z"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/suyog41/" target="_blank" class="text-3xl hover:scale-110 transition-transform" style="color: var(--accent);">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.75h4.55V24H.22V8.75zM8.72 8.75h4.36v2.08h.06c.61-1.15 2.11-2.37 4.34-2.37 4.64 0 5.49 3.05 5.49 7.02V24h-4.54v-7.45c0-1.78-.03-4.07-2.49-4.07-2.5 0-2.88 1.95-2.88 3.95V24H8.72V8.75z"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t py-6 text-center text-sm" style="border-color: var(--border); color: var(--muted);">
+  © <span id="yr"></span> Suyog Mainali
+</footer>
+
+<script>
+// THEME TOGGLE
+const toggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  html.classList.add('dark');
+}
+toggle.addEventListener('click', () => {
+  html.classList.toggle('dark');
+  localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+});
+
+// REVEAL ON SCROLL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('show');
+  });
+}, {threshold: 0.1});
+reveals.forEach(r => observer.observe(r));
+
+// COUNTER ANIMATION
+const counters = document.querySelectorAll('.counter');
+const animateCounter = (el) => {
+  const target = +el.getAttribute('data-target');
+  const increment = target / 100;
+  let count = 0;
+  const updateCount = () => {
+    count += increment;
+    if (count < target) {
+      el.textContent = Math.ceil(count);
+      setTimeout(updateCount, 20);
+    } else {
+      el.textContent = target;
+    }
+  };
+  updateCount();
+};
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && e.target.textContent === '0') {
+      animateCounter(e.target);
+    }
+  });
+}, {threshold: 0.5});
+counters.forEach(c => counterObserver.observe(c));
+
+// IMPACT TOGGLES
+document.addEventListener("click", function(e) {
+  if (!e.target.classList.contains("impact-toggle")) return;
+  const btn = e.target;
+  const list = btn.nextElementSibling;
+  list.classList.toggle("open");
+  btn.textContent = list.classList.contains("open") ? "Hide what I built ▴" : "See what I built ▾";
+});
+
+// PROJECTS TOGGLE
+const projectsBtn = document.getElementById('toggle-projects');
+const projectsHidden = document.getElementById('projects-hidden');
+projectsBtn.addEventListener('click', () => {
+  if (projectsHidden.classList.contains('hidden')) {
+    projectsHidden.classList.remove('hidden');
+    projectsHidden.classList.add('grid');
+    projectsBtn.textContent = 'View Less Projects';
+  } else {
+    projectsHidden.classList.add('hidden');
+    projectsHidden.classList.remove('grid');
+    projectsBtn.textContent = 'View More Projects';
+  }
+});
+
+// CERTS TOGGLE
+const certsBtn = document.getElementById('toggle-certs');
+const certsHidden = document.getElementById('certs-hidden');
+certsBtn.addEventListener('click', () => {
+  if (certsHidden.classList.contains('hidden')) {
+    certsHidden.classList.remove('hidden');
+    certsHidden.classList.add('grid');
+    certsBtn.textContent = 'View Less Certifications';
+  } else {
+    certsHidden.classList.add('hidden');
+    certsHidden.classList.remove('grid');
+    certsBtn.textContent = 'View More Certifications';
+  }
+});
+
+// FOOTER YEAR
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
 </body>
 </html>
-
-
-
