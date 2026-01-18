@@ -443,7 +443,10 @@
     
     <!-- Professional -->
     <h3 class="text-xl font-semibold mb-6" style="color: var(--accent);">Professional Certifications</h3>
-    <div class="grid md:grid-cols-2 gap-6 mb-12">
+
+    <!-- Visible professional certs -->
+    <div class="grid md:grid-cols-2 gap-6 mb-6" id="pro-certs-visible">
+      <!-- Google Data Analytics -->
       <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
         <div class="flex items-center gap-4 mb-4">
           <img src="images/google-logo.png" class="w-10 h-10 object-contain">
@@ -455,6 +458,7 @@
         <a href="https://www.coursera.org/account/accomplishments/professional-cert/BLT5E7F8NUT9" target="_blank" class="text-sm btn-secondary">View Certificate</a>
       </article>
 
+      <!-- Data Analysis with R -->
       <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
         <div class="flex items-center gap-4 mb-4">
           <img src="images/duke-logo.png" class="w-10 h-10 object-contain">
@@ -466,6 +470,27 @@
         <a href="https://www.coursera.org/account/accomplishments/specialization/59WJ75V8402C" target="_blank" class="text-sm btn-secondary">View Certificate</a>
       </article>
     </div>
+
+    <!-- Hidden professional certs (shown via See More) -->
+    <div class="hidden grid md:grid-cols-2 gap-6 mb-6" id="pro-certs-hidden">
+      <!-- Packt (Coursera specialization) -->
+      <article class="bg-card p-6 rounded-2xl" style="border: 1px solid var(--border);">
+        <div class="flex items-center gap-4 mb-4">
+          <img src="images/packt-logo.png" class="w-10 h-10 object-contain">
+          <div>
+            <h4 class="font-semibold">Mastering Azure Databricks for Data Engineers</h4>
+            <p class="text-sm" style="color: var(--muted);">Packt · Coursera</p>
+          </div>
+        </div>
+        <a href="https://www.coursera.org/account/accomplishments/specialization/E88JL856503G" target="_blank" class="text-sm btn-secondary">View Certificate</a>
+      </article>
+    </div>
+
+    <!-- See more button for professional certs -->
+    <div class="text-center mb-12">
+      <button id="toggle-pro-certs" class="btn-secondary">See More</button>
+    </div>
+
 
     <!-- Course Certs -->
     <h3 class="text-xl font-semibold mb-6" style="color: var(--accent);">Course Certifications</h3>
@@ -736,6 +761,24 @@ projectsBtn.addEventListener('click', () => {
     projectsBtn.textContent = 'View More Projects';
   }
 });
+
+// PROFESSIONAL CERTS TOGGLE
+const proCertsBtn = document.getElementById('toggle-pro-certs');
+const proCertsHidden = document.getElementById('pro-certs-hidden');
+
+if (proCertsBtn && proCertsHidden) {
+  proCertsBtn.addEventListener('click', () => {
+    if (proCertsHidden.classList.contains('hidden')) {
+      proCertsHidden.classList.remove('hidden');
+      proCertsHidden.classList.add('grid');
+      proCertsBtn.textContent = 'See Less';
+    } else {
+      proCertsHidden.classList.add('hidden');
+      proCertsHidden.classList.remove('grid');
+      proCertsBtn.textContent = 'See More';
+    }
+  });
+}
 
 // CERTS TOGGLE
 const certsBtn = document.getElementById('toggle-certs');
