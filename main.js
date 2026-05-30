@@ -1,9 +1,9 @@
 /* main.js — Suyog Mainali Portfolio */
 'use strict';
 
-/* ============================================================
+/*
    CONSTANTS & DATA
-   ============================================================ */
+*/
 const MONTHS = ['Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'];
 const BLUE = '#00d2ff', GREEN = '#00e676', AMBER = '#ffb300', PURPLE = '#7c4dff', TEAL = '#1D9E75';
 
@@ -180,14 +180,14 @@ const PROJECTS = [
   }
 ];
 
-/* ============================================================
+/*
    CHART INSTANCES
-   ============================================================ */
+*/
 const charts = {};
 
-/* ============================================================
+/*
    NAV
-   ============================================================ */
+*/
 function initNav() {
   const mobBtn = document.getElementById('mob-btn');
   const mobMenu = document.getElementById('mob-menu');
@@ -225,9 +225,9 @@ function initNav() {
   });
 }
 
-/* ============================================================
+/*
    KPI COUNTER ANIMATION
-   ============================================================ */
+*/
 function animateCounter(el) {
   const target = parseFloat(el.dataset.target);
   const suffix = el.dataset.suffix || '';
@@ -246,9 +246,9 @@ function animateCounter(el) {
   requestAnimationFrame(tick);
 }
 
-/* ============================================================
+/*
    SCROLL REVEAL + KPI ANIMATION
-   ============================================================ */
+*/
 function initReveal() {
   const revealObs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
@@ -281,9 +281,9 @@ function initReveal() {
   document.querySelectorAll('.skill-group, .chart-card').forEach(el => barObs.observe(el));
 }
 
-/* ============================================================
+/*
    EXPERIENCE ACCORDION
-   ============================================================ */
+*/
 function initExperience() {
   document.querySelectorAll('.exp-header').forEach(header => {
     header.addEventListener('click', () => {
@@ -304,9 +304,9 @@ function initExperience() {
   });
 }
 
-/* ============================================================
+/*
    PROJECTS
-   ============================================================ */
+*/
 function buildProjects() {
   const grid = document.getElementById('proj-grid');
   if (!grid) return;
@@ -378,9 +378,9 @@ function categoryIcon(cat) {
   return icons[cat] || '💻';
 }
 
-/* ============================================================
+/*
    CHARTS (Chart.js)
-   ============================================================ */
+*/
 function initCharts() {
   const isDark = true; // always dark theme
   const tc = 'rgba(255,255,255,0.35)';
@@ -499,9 +499,9 @@ function initCharts() {
   }
 }
 
-/* ============================================================
+/*
    RESUME SELECTOR
-   ============================================================ */
+*/
 function initResume() {
   const opts = document.querySelectorAll('.ropt');
   const dlBtn = document.getElementById('resume-dl');
@@ -518,17 +518,17 @@ function initResume() {
   });
 }
 
-/* ============================================================
+/*
    FOOTER YEAR
-   ============================================================ */
+*/
 function setYear() {
   const el = document.getElementById('footer-year');
   if (el) el.textContent = new Date().getFullYear();
 }
 
-/* ============================================================
+/*
    INIT
-   ============================================================ */
+*/
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initReveal();

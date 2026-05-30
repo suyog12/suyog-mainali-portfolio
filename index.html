@@ -3,32 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Suyog Mainali — Senior Data Engineer. 7+ years building scalable data platforms at production scale.">
-<title>Suyog Mainali — Senior Data Engineer</title>
+<meta name="description" content="Suyog Mainali - Senior Data Engineer. 7+ years building scalable data platforms at production scale.">
+<title>Suyog Mainali - Senior Data Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
-/* ════ FIGMA DESIGN SYSTEM ══════════════════════════════════════
-   Inspired by:
-   1. Devanshi Tandel – Data Engineer Portfolio (CC BY 4.0)
-      figma.com/community/file/1601822239616608467
-   2. Data Engineering Portfolio Design
-      figma.com/community/file/1598409587680640726
-   3. Data Engineer Portfolio
-      figma.com/community/file/1544000451970062616
-
-   Key Figma patterns implemented:
-   — Fixed left sidebar nav with section dots + vertical label
-   — Oversized ghost section numbers (01 – 07)
-   — Full-bleed dark sections, razor-thin 1px grid dividers
-   — Lime-on-black accent: exact #c6f135
-   — Hero with outline/stroke typography for last name
-   — Horizontal timeline rows for experience
-   — Skills as category-table (label col + tag col)
-   — Scroll progress bar (top edge, lime)
-   — Marquee ticker strip
-═══════════════════════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 img{display:block;max-width:100%}
@@ -63,11 +43,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
 ::-webkit-scrollbar{width:2px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--lime)}
 
-/* ── Scroll progress ── */
+/*  Scroll progress  */
 #prog{position:fixed;top:0;left:var(--side);right:0;height:2px;background:var(--lime);transform-origin:left;transform:scaleX(0);z-index:1000;transition:transform .08s linear}
 
-/* ════ LEFT SIDEBAR ═══════════════════════════════════════════ */
-/* Figma pattern: fixed vertical nav with brand text + dots */
 .side{
   position:fixed;left:0;top:0;bottom:0;width:var(--side);
   border-right:1px solid var(--rule);
@@ -101,7 +79,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .soc-a:hover{color:var(--lime)}
 .soc-a svg{width:15px;height:15px;fill:currentColor}
 
-/* ════ MAIN + TOPBAR ══════════════════════════════════════════ */
+/*  MAIN + TOPBAR  */
 .main{margin-left:var(--side)}
 .topbar{
   position:fixed;top:0;left:var(--side);right:0;z-index:700;
@@ -125,10 +103,10 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 }
 .tb-cta:hover{background:var(--lime);color:var(--bg)}
 
-/* ════ SECTION BASE ════════════════════════════════════════════
+/*  SECTION BASE 
    Figma pattern: each section has oversized ghost number (top-right),
    hairline top border, section label row, large heading
-══════════════════════════════════════════════════════════════ */
+ */
 .sec{min-height:100vh;padding:88px 52px 72px;border-top:1px solid var(--rule);position:relative}
 .sec-inner{max-width:1040px;margin:0 auto}
 /* Ghost number — Figma template #2 signature element */
@@ -158,7 +136,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .rev.in{opacity:1;transform:none}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
 
-/* ════ HERO ═══════════════════════════════════════════════════ */
+/*  HERO  */
 #hero{
   min-height:100vh;padding:0 52px;
   display:flex;flex-direction:column;justify-content:center;
@@ -267,7 +245,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .hcm-v{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--lime);display:block}
 .hcm-k{font-family:var(--mono);font-size:9px;color:var(--g2);display:block;margin-top:2px}
 
-/* ════ MARQUEE ════════════════════════════════════════════════ */
+/*  MARQUEE  */
 .mq{overflow:hidden;height:42px;display:flex;align-items:center;background:var(--bg1);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .mq-inner{display:flex;animation:mq 36s linear infinite;white-space:nowrap}
 @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
@@ -279,7 +257,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 }
 .mdot{width:4px;height:4px;border-radius:50%;background:var(--lime);flex-shrink:0}
 
-/* ════ KPI STRIP ══════════════════════════════════════════════ */
+/*  KPI STRIP  */
 /* Figma pattern: horizontal cells separated by hairlines, no background color */
 .kpi{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--bg1)}
 .kpi-c{padding:40px 36px;border-right:1px solid var(--rule);transition:background .2s;cursor:default}
@@ -288,7 +266,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .kpi-n{font-size:48px;font-weight:800;letter-spacing:-.04em;color:var(--w);line-height:1;margin-bottom:8px}
 .kpi-l{font-family:var(--mono);font-size:10px;color:var(--g2);letter-spacing:.07em;line-height:1.5}
 
-/* ════ ANALYTICS ══════════════════════════════════════════════ */
+/*  ANALYTICS  */
 #analytics{background:var(--bg)}
 /* Figma: grid with 1px gap as divider, no shadows, no rounded corners */
 .cg2{display:grid;grid-template-columns:7fr 5fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1px}
@@ -320,7 +298,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .pbf{height:100%;border-radius:1px;width:0;transition:width 1.3s cubic-bezier(.16,1,.3,1)}
 .pbl{background:var(--lime)}.pbt{background:var(--teal)}.pbo{background:var(--org)}
 
-/* ════ EXPERIENCE ═════════════════════════════════════════════ */
+/*  EXPERIENCE  */
 /* Figma template 2: full-width rows, left border accent on hover/open */
 #experience{background:var(--bg1)}
 .exp-list{border:1px solid var(--rule);border-bottom:none}
@@ -376,7 +354,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .exp-tags{display:flex;flex-wrap:wrap;gap:6px}
 .etag{font-family:var(--mono);font-size:10px;padding:4px 10px;border-radius:3px;background:rgba(255,255,255,.04);color:var(--g2);border:1px solid var(--rule)}
 
-/* ════ PROJECTS ═══════════════════════════════════════════════ */
+/*  PROJECTS  */
 #projects{background:var(--bg)}
 .pf-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:36px}
 .pf{
@@ -386,7 +364,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 }
 .pf:hover{border-color:var(--lime);color:var(--lime)}
 .pf.on{background:var(--lime);color:var(--bg);border-color:var(--lime)}
-/* ── Featured project spotlight — full-width hero card ── */
+/*  Featured project spotlight — full-width hero card  */
 .pc-spotlight{
   background:var(--bg1);border:1px solid rgba(198,241,53,.22);
   border-radius:0;display:grid;
@@ -510,6 +488,61 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
   font-family:var(--mono);font-size:10px;color:var(--g2);
   letter-spacing:.1em;text-transform:uppercase;
 }
+/*  PROJECT SELECTOR  */
+.proj-sel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule2);border:1px solid var(--rule2);margin-bottom:1px}
+.proj-sel-card{background:var(--bg1);padding:20px 22px;cursor:pointer;position:relative;transition:background .2s;border-top:2px solid transparent}
+.proj-sel-card:hover{background:var(--bg2)}
+.proj-sel-card.active{background:var(--bg2);border-top-color:var(--lime)}
+.proj-sel-badge{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--lbg);color:var(--lime);border:1px solid rgba(198,241,53,.2);margin-bottom:10px}
+.proj-sel-badge.lackey-badge{background:var(--tbg);color:var(--teal);border-color:rgba(45,212,191,.2)}
+.proj-sel-badge.ssrm-badge{background:var(--obg);color:var(--org);border-color:rgba(251,146,60,.2)}
+.proj-sel-badge.ent-badge{background:rgba(167,139,250,.07);color:var(--pur);border-color:rgba(167,139,250,.2)}
+.proj-sel-cat{font-family:var(--mono);font-size:10px;color:var(--g2);letter-spacing:.05em;margin-bottom:6px}
+.proj-sel-name{font-size:14px;font-weight:700;color:var(--w);line-height:1.3;margin-bottom:10px}
+.proj-sel-tags{display:flex;flex-wrap:wrap;gap:4px}
+.proj-sel-tags span{font-family:var(--mono);font-size:9px;color:var(--g2);background:rgba(255,255,255,.04);border:1px solid var(--rule);padding:2px 7px;border-radius:3px}
+.proj-sel-card.active .proj-sel-tags span{color:var(--lime);border-color:rgba(198,241,53,.15)}
+
+/* Detail panel */
+.proj-detail-panel{border:1px solid var(--rule2);background:var(--bg1)}
+.proj-detail{display:none;grid-template-columns:1fr 320px;gap:0}
+.proj-detail.active{display:grid}
+.proj-detail-left{padding:32px 36px;border-right:1px solid var(--rule)}
+.proj-detail-right{padding:28px 24px;background:var(--bg2)}
+.proj-detail-eyebrow{font-family:var(--mono);font-size:10px;color:var(--lime);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.proj-detail-eyebrow::before{content:'';width:14px;height:1px;background:var(--lime)}
+.proj-detail-title{font-size:20px;font-weight:700;color:var(--w);letter-spacing:-.02em;line-height:1.2;margin-bottom:14px}
+.proj-detail-desc{font-size:13px;color:var(--g1);line-height:1.75;margin-bottom:20px}
+.proj-detail-arch{display:flex;flex-wrap:wrap;align-items:center;gap:5px;padding:12px 14px;background:rgba(255,255,255,.03);border:1px solid var(--rule);border-radius:3px;margin-bottom:20px}
+.proj-detail-foot{display:flex;gap:8px}
+.proj-detail-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:16px}
+.proj-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:16px}
+.proj-stat{background:var(--bg1);padding:16px 14px}
+.proj-stat-v{font-family:var(--mono);font-size:18px;font-weight:600;color:var(--lime);line-height:1;margin-bottom:4px}
+.proj-stat-l{font-family:var(--mono);font-size:9px;color:var(--g2);letter-spacing:.05em;line-height:1.4}
+
+/*  RESUME CARDS  */
+.resume-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:28px}
+.resume-role-card{background:var(--bg1);padding:24px 20px;transition:background .2s}
+.resume-role-card:hover{background:var(--bg2)}
+.rrc-icon{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--lime);letter-spacing:.1em;padding:3px 9px;background:var(--lbg);border:1px solid rgba(198,241,53,.18);border-radius:3px;display:inline-block;margin-bottom:14px}
+.rrc-title{font-size:15px;font-weight:700;color:var(--w);margin-bottom:4px}
+.rrc-level{font-family:var(--mono);font-size:10px;color:var(--lime);letter-spacing:.06em;margin-bottom:10px}
+.rrc-desc{font-size:12px;color:var(--g2);line-height:1.6}
+
+/* Responsive overrides */
+@media(max-width:1024px){
+  .proj-sel-grid{grid-template-columns:1fr 1fr}
+  .proj-detail{grid-template-columns:1fr}
+  .proj-detail-left{border-right:none;border-bottom:1px solid var(--rule)}
+  .resume-cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .proj-sel-grid{grid-template-columns:1fr}
+  .resume-cards{grid-template-columns:1fr}
+  .proj-stat-grid{grid-template-columns:1fr 1fr}
+}
+
 .proj-divider::before,.proj-divider::after{
   content:'';flex:1;height:1px;background:var(--rule);
 }
@@ -591,7 +624,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .sb-x{background:rgba(255,255,255,.04);border-color:var(--rule);color:var(--g2)}
 .sb-o{background:var(--obg);border-color:rgba(251,146,60,.2);color:var(--org)}
 
-/* ════ SKILLS ═════════════════════════════════════════════════ */
+/*  SKILLS  */
 /* Figma template 1: category label column + tag cloud column */
 #skills{background:var(--bg1)}
 .sk-table{border:1px solid var(--rule);border-bottom:none}
@@ -622,7 +655,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .skb-tr{width:100px;height:2px;background:var(--rule2);border-radius:1px;overflow:hidden;flex-shrink:0}
 .skb-f{height:100%;border-radius:1px;width:0;transition:width 1.4s cubic-bezier(.16,1,.3,1);background:var(--lime)}
 
-/* ════ EDUCATION ══════════════════════════════════════════════ */
+/*  EDUCATION  */
 #education{background:var(--bg)}
 .edu-g{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:48px}
 .edu-c{background:var(--bg1);padding:30px;display:flex;gap:16px;align-items:flex-start;transition:background .2s}
@@ -641,7 +674,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .cert-lk{font-family:var(--mono);font-size:10px;color:var(--lime)}
 .cert-lk:hover{text-decoration:underline}
 
-/* ════ RESUME — ROLES + SINGLE DOWNLOAD ════════════════════════ */
+/*  RESUME — ROLES + SINGLE DOWNLOAD  */
 #resume{background:var(--bg1)}
 
 /* 3-col roles grid */
@@ -784,7 +817,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
   align-items:center;
 }
 
-/* ════ CONTACT + EMAIL FORM ════════════════════════════════════ */
+/*  CONTACT + EMAIL FORM  */
 #contact{background:var(--bg)}
 .con-g{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
 .con-col{background:var(--bg1);padding:40px}
@@ -836,7 +869,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--w);overflow-x:hidd
 .av-pill::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--lime);animation:blink 2s infinite}
 .av-note{font-family:var(--mono);font-size:10.5px;color:var(--g2);line-height:1.65}
 
-/* ════ CREDIT + FOOTER ════════════════════════════════════════ */
+/*  CREDIT + FOOTER  */
 .credit{
   background:var(--bg1);border-top:1px solid var(--rule);
   padding:13px 52px;
@@ -852,7 +885,7 @@ footer{
   flex-wrap:wrap;gap:10px;
 }
 
-/* ════ RESPONSIVE ════════════════════════════════════════════ */
+/*  RESPONSIVE  */
 @media(max-width:1024px){
   :root{--side:0px}
   .side{display:none}
@@ -902,12 +935,11 @@ footer{
 
 <div id="prog"></div>
 
-<!-- ── SIDEBAR ─────────────────────────── -->
+<!--  SIDEBAR  -->
 <nav class="side">
-  <div class="side-brand">SUYOG MAINALI — DATA ENGINEER</div>
+  <div class="side-brand">SUYOG MAINALI - AI ENGINEER / DATA ENGINEER</div>
   <div class="side-dots">
     <div class="dot on" data-sec="hero" data-lbl="home"></div>
-    <div class="dot" data-sec="analytics" data-lbl="analytics"></div>
     <div class="dot" data-sec="experience" data-lbl="experience"></div>
     <div class="dot" data-sec="projects" data-lbl="projects"></div>
     <div class="dot" data-sec="skills" data-lbl="skills"></div>
@@ -926,10 +958,9 @@ footer{
 </nav>
 
 <div class="main">
-<!-- ── TOPBAR ──────────────────────────── -->
+<!--  TOPBAR  -->
 <header class="topbar">
   <nav class="tb-links">
-    <a href="#analytics">Analytics</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
@@ -939,22 +970,22 @@ footer{
   <a href="#contact" class="tb-cta">Get in touch</a>
 </header>
 
-<!-- ═══ HERO ═══════════════════════════════ -->
+<!--  HERO  -->
 <section id="hero">
   <div class="hero-dotgrid"></div>
-  <div class="hero-avail"><span class="avdot"></span>Available — Summer / Fall 2026</div>
+  <div class="hero-avail"><span class="avdot"></span>Available - Summer / Fall 2026</div>
   <h1 class="hero-nm">
     <span class="solid">Suyog</span>
     <span class="hollow">Mainali</span>
   </h1>
   <div class="hero-title">
-  <strong>Senior Data Engineer</strong> &nbsp;·&nbsp;
-  7+ years in production data platforms &nbsp;·&nbsp;
+  <strong>Senior AI Engineer / Data Engineer</strong> &nbsp;·&nbsp;
+  7+ years in production AI &amp; data platforms &nbsp;·&nbsp;
   MSBA '26, William &amp; Mary
 </div>
 
 <p class="hero-desc">
-  I build reliable data platforms, scalable pipelines, and analytics-ready systems used in real production environments. My experience spans 10TB+ daily data processing, HIPAA-compliant healthcare platforms, and ML data infrastructure that improved model preparation speed by 40%.
+  I build production AI systems, scalable data platforms, and LLM-powered applications used in real clinical and enterprise environments. My experience spans LangGraph multi-agent systems with RAG, 10TB+ daily data processing, HIPAA-compliant healthcare platforms, and ML models deployed into production workflows.
 </p>
   <div class="hero-btns">
   <a href="#projects" class="btn-lime">View Projects</a>
@@ -987,134 +1018,75 @@ footer{
 <div class="mq"><div class="mq-inner">
   <span class="mq-it"><span class="mdot"></span>10TB+ Daily</span>
   <span class="mq-it"><span class="mdot"></span>99.8% SLA</span>
-  <span class="mq-it"><span class="mdot"></span>FFIEC Production</span>
   <span class="mq-it"><span class="mdot"></span>LangGraph Multi-Agent</span>
+  <span class="mq-it"><span class="mdot"></span>RAG Pipelines</span>
+  <span class="mq-it"><span class="mdot"></span>FFIEC Production</span>
+  <span class="mq-it"><span class="mdot"></span>LLM Evaluation</span>
   <span class="mq-it"><span class="mdot"></span>60% Failures Reduced</span>
-  <span class="mq-it"><span class="mdot"></span>250K+ Patient Visits</span>
+  <span class="mq-it"><span class="mdot"></span>5M+ Patient Records</span>
   <span class="mq-it"><span class="mdot"></span>HIPAA Compliant</span>
-  <span class="mq-it"><span class="mdot"></span>F-1 STEM OPT</span>
+  <span class="mq-it"><span class="mdot"></span>Service by SSRM</span>
   <span class="mq-it"><span class="mdot"></span>MSBA 2026</span>
   <!-- dup -->
   <span class="mq-it"><span class="mdot"></span>10TB+ Daily</span>
   <span class="mq-it"><span class="mdot"></span>99.8% SLA</span>
-  <span class="mq-it"><span class="mdot"></span>FFIEC Production</span>
   <span class="mq-it"><span class="mdot"></span>LangGraph Multi-Agent</span>
+  <span class="mq-it"><span class="mdot"></span>RAG Pipelines</span>
+  <span class="mq-it"><span class="mdot"></span>FFIEC Production</span>
+  <span class="mq-it"><span class="mdot"></span>LLM Evaluation</span>
   <span class="mq-it"><span class="mdot"></span>60% Failures Reduced</span>
-  <span class="mq-it"><span class="mdot"></span>250K+ Patient Visits</span>
+  <span class="mq-it"><span class="mdot"></span>5M+ Patient Records</span>
   <span class="mq-it"><span class="mdot"></span>HIPAA Compliant</span>
-  <span class="mq-it"><span class="mdot"></span>F-1 STEM OPT</span>
+  <span class="mq-it"><span class="mdot"></span>Service by SSRM</span>
   <span class="mq-it"><span class="mdot"></span>MSBA 2026</span>
 </div></div>
 
-<!-- KPI BAND — different metrics from hero stats to avoid repetition -->
-<div class="kpi">
-  <div class="kpi-c rev"><div class="kpi-n"><span class="cnt" data-t="60" data-s="%↓">0</span></div><div class="kpi-l">Pipeline failures<br>after re-architecture</div></div>
-  <div class="kpi-c rev d1"><div class="kpi-n"><span class="cnt" data-t="5" data-s="K+">0</span></div><div class="kpi-l">Daily queries served<br>across client dashboards</div></div>
-  <div class="kpi-c rev d2"><div class="kpi-n"><span class="cnt" data-t="40" data-s="%↓">0</span></div><div class="kpi-l">ML data prep time<br>after feature pipelines</div></div>
-  <div class="kpi-c rev d3"><div class="kpi-n"><span class="cnt" data-t="20" data-s="+">0</span></div><div class="kpi-l">Client-facing dashboards<br>in production</div></div>
-</div>
-
-<!-- ═══ ANALYTICS ═════════════════════════ -->
-<section id="analytics" class="sec">
-  <div class="gn">01</div>
-  <div class="sec-inner">
-    <div class="sec-lbl">01 <span>— analytics</span></div>
-    <h2 class="sec-h">Pipeline Evolution<br><span class="dim">and performance metrics</span></h2>
-
-    <!-- Chart 1: ETL Evolution (the real story — Python → Alteryx → PySpark → projected) -->
-    <div class="cg2 rev">
-      <div class="cbox">
-        <div class="cbox-hd">
-          <div>
-            <div class="cbox-ttl">ETL pipeline evolution — processing time per 1M records</div>
-            <div class="cbox-sub">Python manual → Alteryx → PySpark EMR → projected streaming</div>
-          </div>
-          <div class="ctabs">
-            <button class="ct on" data-chart="etl">ETL Evolution</button>
-            <button class="ct" data-chart="lat">Data Retrieval</button>
-            <button class="ct" data-chart="perf">Performance</button>
-          </div>
-        </div>
-        <div style="position:relative;height:220px"><canvas id="mc" role="img" aria-label="ETL evolution chart"></canvas></div>
-        <div class="cleg" id="mc-leg"></div>
-      </div>
-      <div class="cbox">
-        <div class="cbox-hd"><div><div class="cbox-ttl">Key outcome metrics</div><div class="cbox-sub">Verified career impact</div></div></div>
-        <div style="padding-top:4px">
-          <div class="mr"><span class="mr-l">Reporting latency</span><span class="mr-r">99%<div class="pb"><div class="pbf pbl" data-w="99"></div></div></span></div>
-          <div class="mr"><span class="mr-l">Pipeline failures</span><span class="mr-r">60%<div class="pb"><div class="pbf pbt" data-w="60"></div></div></span></div>
-          <div class="mr"><span class="mr-l">Data errors (dbt)</span><span class="mr-r">40%<div class="pb"><div class="pbf pbo" data-w="40"></div></div></span></div>
-          <div class="mr"><span class="mr-l">ML data prep time</span><span class="mr-r">40%<div class="pb"><div class="pbf pbt" data-w="40"></div></div></span></div>
-          <div class="mr"><span class="mr-l">Manual reporting</span><span class="mr-r">70%<div class="pb"><div class="pbf pbl" data-w="70"></div></div></span></div>
-          <div class="mr"><span class="mr-l">Ad-hoc requests</span><span class="mr-r">40%<div class="pb"><div class="pbf pbo" data-w="40"></div></div></span></div>
-          <div class="mr"><span class="mr-l">Daily queries served</span><span class="mr-r" style="color:var(--lime)">5,000+</span></div>
-          <div class="mr"><span class="mr-l">Pipeline SLA uptime</span><span class="mr-r" style="color:var(--lime)">99.8%</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Charts row 2: Data retrieval stages + Performance increase + projected -->
-    <div class="cg3 rev d1">
-      <div class="cbox">
-        <div class="cbox-hd"><div><div class="cbox-ttl">Data retrieval evolution</div><div class="cbox-sub">Local download → API → DB → DuckDB+R2</div></div></div>
-        <div style="position:relative;height:190px"><canvas id="lc" role="img" aria-label="Data retrieval evolution chart"></canvas></div>
-        <p style="font-family:var(--mono);font-size:10px;color:var(--g2);margin-top:10px;line-height:1.55">From downloading FFIEC zip files locally (15min+) to DuckDB httpfs querying Cloudflare R2 directly in under 200ms. Zero egress fees.</p>
-      </div>
-      <div class="cbox">
-        <div class="cbox-hd"><div><div class="cbox-ttl">Throughput — current vs projected</div><div class="cbox-sub">With streaming + ML feature pipeline upgrade</div></div></div>
-        <div style="position:relative;height:190px"><canvas id="ic" role="img" aria-label="Throughput projection chart"></canvas></div>
-      </div>
-      <div class="cbox">
-        <div class="cbox-hd"><div><div class="cbox-ttl">Technical skill depth</div><div class="cbox-sub">Self-assessed proficiency by domain</div></div></div>
-        <div style="position:relative;height:190px"><canvas id="rc" role="img" aria-label="Skill radar chart"></canvas></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ EXPERIENCE ════════════════════════ -->
+<!--  EXPERIENCE  -->
 <section id="experience" class="sec">
   <div class="gn">02</div>
   <div class="sec-inner">
-    <div class="sec-lbl">02 <span>— experience</span></div>
+    <div class="sec-lbl">02 <span>- experience</span></div>
     <h2 class="sec-h">Production Systems<br><span class="dim">I've built</span></h2>
   </div>
   <div class="exp-list rev">
     <!-- W&M -->
     <div class="exp-row">
       <div class="exp-trig">
-        <div class="exp-yr">Sep 2025 — Present</div>
+        <div class="exp-yr">Aug 2025 - May 2026</div>
         <div class="exp-cw">
           <img src="images/william_and_mary.png" alt="W&M" class="exp-logo">
-          <div><div class="exp-co">William &amp; Mary</div><div class="exp-role">Graduate and Research Assistant — MSBA</div></div>
+          <div><div class="exp-co">William &amp; Mary</div><div class="exp-role">MS Business Analytics + Graduate Research Assistant</div></div>
         </div>
-        <span class="exp-bge eg-lime">Current</span>
+        <span class="exp-bge eg-lime">Graduated</span>
         <div class="exp-chev">▾</div>
       </div>
       <div class="exp-body">
         <div class="exp-cnt">
           <div class="exp-rule"></div>
-          <p class="exp-intro">Pursuing an MS in Business Analytics at the Mason School of Business. Working as a research assistant supporting faculty data research while completing applied coursework in data engineering, machine learning, and AI systems.</p>
+          <p class="exp-intro">Completed an MS in Business Analytics at the Mason School of Business with a graduate assistantship spanning two faculty research projects. Coursework covered statistical modeling, machine learning, big data systems, optimization, and AI applications. The assistantship ran for the full academic year and is now complete.</p>
           <ul class="exp-ul">
-            <li class="exp-li" style="padding-left:0;margin-bottom:6px"><span style="font-family:var(--mono);font-size:9px;color:var(--lime);letter-spacing:.12em;text-transform:uppercase">Research Assistant</span></li>
-            <li class="exp-li">Collaborated with Prof. Rachel Chung to debug, refactor, and validate Python and data-processing code across multiple chapters of an AI textbook, improving correctness and reproducibility for student-facing materials.</li>
-            <li class="exp-li">Built Python-based web scraping pipelines for Prof. Seth Li collecting Amazon product metadata and customer reviews via SerpAPI for purchase-behavior research, with incremental processing and retry logic.</li>
-            <li class="exp-li" style="padding-left:0;margin-top:14px;margin-bottom:6px"><span style="font-family:var(--mono);font-size:9px;color:var(--lime);letter-spacing:.12em;text-transform:uppercase">Academic Projects</span></li>
-            <li class="exp-li"><strong>FFIEC Call Report Analytics Platform</strong> (Big Data and AI) — PySpark ingestion to Cloudflare R2, DuckDB httpfs achieving sub-200ms queries, FastAPI backend, React/Vite with UBPR formula builder and multi-bank comparison. Three-agent LangChain/LangGraph + Gemini system for natural-language regulatory analysis.</li>
-            <li class="exp-li"><strong>Lackey Free Clinic Patient Churn Prediction</strong> (Machine Learning) — End-to-end ML pipeline on HIPAA-restricted clinical data. ICD-9 to ICD-10 mapping under 2% unknown, Charlson and Elixhauser comorbidity scoring, and seven-model comparison via R caret (random forest, XGBoost, logistic regression, LDA, SVM, neural network, elastic net) with specialty-specific OB/GYN submodels and a 365-day lookahead window.</li>
-            <li class="exp-li"><strong>$100 Question Stock Dashboard</strong> (Computing through Business Analytics) — Multi-page Plotly Dash app with normalized growth curves, candlestick views with 20/50-day MAs, rolling volatility, Alpha Vantage API integration, and Werkzeug authentication.</li>
+            <li class="exp-li" style="padding-left:0;margin-bottom:6px"><span style="font-family:var(--mono);font-size:9px;color:var(--lime);letter-spacing:.12em;text-transform:uppercase">GA - Prof. <a href="https://www.linkedin.com/in/rachel-chung-5745512/" target="_blank" rel="noopener" style="color:var(--lime)">Rachel Chung</a></span></li>
+            <li class="exp-li">Wrote, debugged, and corrected Python code across multiple chapters of an AI textbook that has since been published. Generated charts, graphs, and data visualizations using Python for use in the book. Reviewed and validated data-processing examples to make sure every code sample ran correctly for students.</li>
+            <li class="exp-li">Built the <strong>DEI Downloader</strong> web application under Prof. Chung's research direction: a FastAPI and React tool that pulls the free public indicators behind the Tufts Digital Evolution Index 2025 from World Bank, IMF, and OWID APIs for 125 economies and bundles them into a single xlsx download. Deployed and live at <a href="https://dei-downloader-web.onrender.com/" target="_blank" rel="noopener" style="color:var(--lime)">dei-downloader-web.onrender.com</a>.</li>
+            <li class="exp-li" style="padding-left:0;margin-top:14px;margin-bottom:6px"><span style="font-family:var(--mono);font-size:9px;color:var(--lime);letter-spacing:.12em;text-transform:uppercase">GA - Prof. <a href="https://www.linkedin.com/in/seth-li/" target="_blank" rel="noopener" style="color:var(--lime)">Seth Li</a></span></li>
+            <li class="exp-li">Graded assignments and reviewed student papers for Prof. Li's Predictive Analytics course, which was taught in R. Gave feedback on model selection, statistical reasoning, and code correctness.</li>
+            <li class="exp-li">Built the <strong>Amazon Reviews ETL Pipeline</strong> for Prof. Li's research on consumer buying patterns. The system collects Amazon product metadata and customer reviews via SerpAPI, stores them in PostgreSQL on Aiven Cloud, and exposes a Flask REST API with a web dashboard for managing URLs, tracking extraction progress, and exporting filtered review datasets as CSV. Includes incremental processing logic so already-scraped ASINs are not re-fetched.</li>
+            <li class="exp-li" style="padding-left:0;margin-top:14px;margin-bottom:6px"><span style="font-family:var(--mono);font-size:9px;color:var(--lime);letter-spacing:.12em;text-transform:uppercase">Course Projects</span></li>
+            <li class="exp-li"><strong>FFIEC Call Report Analytics Platform</strong> (Big Data and AI) - PySpark ingestion to Cloudflare R2, DuckDB httpfs at sub-200ms, FastAPI backend, React/Vite with UBPR formula builder and multi-bank comparison. Three-agent LangChain/LangGraph + Gemini system for natural-language regulatory analysis.</li>
+            <li class="exp-li"><strong>Lackey Free Clinic Patient Churn Prediction</strong> (Machine Learning) - End-to-end ML pipeline on HIPAA-restricted clinical data. ICD-9 to ICD-10 mapping under 2% unknown, Charlson and Elixhauser comorbidity scoring, and seven-model comparison via R caret with specialty-specific OB/GYN submodels and a 365-day lookahead window.</li>
+            <li class="exp-li"><strong>$100 Question Stock Dashboard</strong> (Computing through Business Analytics) - Multi-page Plotly Dash app with normalized growth curves, candlestick views with 20/50-day MAs, rolling volatility, and Alpha Vantage API integration.</li>
           </ul>
-          <div class="exp-tags"><span class="etag">Python</span><span class="etag">PySpark</span><span class="etag">DuckDB</span><span class="etag">FastAPI</span><span class="etag">React</span><span class="etag">LangChain</span><span class="etag">LangGraph</span><span class="etag">R / caret</span><span class="etag">Plotly Dash</span><span class="etag">Gemini</span><span class="etag">Cloudflare R2</span></div>
+          <div class="exp-tags"><span class="etag">Python</span><span class="etag">R / caret</span><span class="etag">PySpark</span><span class="etag">DuckDB</span><span class="etag">FastAPI</span><span class="etag">React / TypeScript</span><span class="etag">LangChain</span><span class="etag">LangGraph</span><span class="etag">Flask</span><span class="etag">PostgreSQL</span><span class="etag">SerpAPI</span><span class="etag">Plotly Dash</span><span class="etag">Gemini</span><span class="etag">Cloudflare R2</span><span class="etag">openpyxl</span></div>
         </div>
       </div>
     </div>
 <!-- Zakipoint -->
 <div class="exp-row">
   <div class="exp-trig">
-    <div class="exp-yr">Jul 2020 — Jul 2025</div>
+    <div class="exp-yr">Jul 2020 - Jul 2025</div>
     <div class="exp-cw">
       <img src="images/zakipointhealth_logo.jpeg" alt="Zakipoint" class="exp-logo">
-      <div><div class="exp-co">Zakipoint Health</div><div class="exp-role">Senior Data Engineer</div></div>
+      <div><div class="exp-co">Zakipoint Health</div><div class="exp-role">Senior AI Engineer / Data Engineer</div></div>
     </div>
     <span class="exp-bge eg-teal">5 years</span>
     <div class="exp-chev">▾</div>
@@ -1122,23 +1094,47 @@ footer{
   <div class="exp-body">
     <div class="exp-cnt">
       <div class="exp-rule"></div>
-      <p class="exp-intro">Healthcare SaaS platform serving 50+ self-insured employers and health plans across the U.S. — cost transparency, utilization analytics, and care management on cloud-native infrastructure. Responsible for the full data layer: ingestion to stakeholder-facing analytics, across claims, eligibility, and provider datasets, under HIPAA and SOC 2 compliance.</p>
+      <p class="exp-intro">Healthcare SaaS platform serving 50+ self-insured employers and health plans across the U.S. - cost transparency, utilization analytics, care management, and AI-powered clinical decision support on cloud-native infrastructure. Responsible for the full data and AI layer: ingestion through LLM-powered applications, across claims, eligibility, provider, and EHR datasets, under HIPAA and SOC 2 compliance.</p>
       <ul class="exp-ul">
-        <li class="exp-li">Designed and owned the <strong>canonical data architecture</strong> across claims, eligibility, and provider datasets — scalable data models and SLA-governed pipelines processing 10TB+ daily with 99.8% uptime across the full client portfolio.</li>
-        <li class="exp-li">Built <strong>real-time cost-estimation data services via Java and Spring Boot REST APIs</strong>, backed by PySpark and SQL pipelines, delivering sub-second pre-visit out-of-pocket estimates to 50,000+ users.</li>
-        <li class="exp-li">Re-architected distributed <strong>PySpark and SQL ETL pipelines on AWS Glue and EMR</strong> with automated validation and observability — reduced pipeline failures by 60%+ through partition tuning, caching, and shuffle optimization.</li>
-        <li class="exp-li">Designed <strong>dimensional models</strong> (star schema, SCD1/2) with curated data marts that cut reporting latency from two days to under ten minutes, eliminating manual reporting cycles for 20+ client-facing dashboards.</li>
-        <li class="exp-li">Built <strong>production ML feature pipelines</strong> for risk scoring and care-gap detection, reducing data preparation time by 40% and standardizing feature definitions reused across data science projects.</li>
-        <li class="exp-li">Owned <strong>dataset SLAs end-to-end</strong> — SLIs, SLOs, alerting, incident triage, and RCA — alongside PHI access controls, data masking, and dbt-based validation that reduced data inconsistencies by 40%+.</li>
+        <li class="exp-li">Built and operated <strong>production LLM-powered applications</strong>: LangGraph multi-agent system (master orchestrator, ReAct sub-agents, tool calling, conversational memory, hybrid intent routing); RAG pipelines (chunking, embedding selection, metadata filters, reranking) over clinical health datasets; LLM evaluation frameworks measuring answer correctness, hallucination rate, and latency - with full post-deployment monitoring, drift detection, and incident response.</li>
+        <li class="exp-li">Designed and owned the <strong>canonical data architecture</strong> across claims, eligibility, and provider datasets - scalable data models and SLA-governed ETL/ELT pipelines processing <strong>10TB+ daily</strong> with <strong>99.8% uptime</strong> across 200+ Airflow DAGs; Kafka streaming for real-time clinical data ingestion (HL7 v2, FHIR R4).</li>
+        <li class="exp-li">Re-architected distributed <strong>PySpark and SQL ETL pipelines on AWS Glue and EMR</strong> with automated validation and observability - reduced pipeline failures by <strong>60%+</strong> through partition tuning, broadcast joins, shuffle reduction, and predicate pushdown optimization.</li>
+        <li class="exp-li">Built <strong>member risk propensity and patient churn prediction models</strong> across 5M+ longitudinal records using 7 ML algorithms (logistic regression, random forest, XGBoost, gradient boosting, SVM, MLP, naïve Bayes); ICD-10 mapping at under 2% unknown rate; Charlson/Elixhauser comorbidity scoring; deployed into clinical decision support workflows for 50+ health plan clients.</li>
+        <li class="exp-li">Built <strong>250+ production APIs and microservices</strong> (150+ Python/FastAPI, 100+ Java/Spring Boot) with SSE streaming, JWT auth, AES+RSA encryption, rate limiting, and observability dashboards tracking latency, cost, and accuracy; hybrid semantic search (Amazon Titan V2, pgvector, cosine similarity) at sub-200ms.</li>
+        <li class="exp-li">Designed <strong>dimensional models</strong> (star schema, SCD1/2) with curated data marts that cut reporting latency from two days to under ten minutes; built Power BI and Tableau dashboards for 20+ clients; standardized 15+ core KPIs; mentored <strong>8 engineers</strong>, promoted <strong>3 to senior</strong>.</li>
       </ul>
-      <div class="exp-tags"><span class="etag">PySpark</span><span class="etag">AWS Glue / EMR</span><span class="etag">Kafka</span><span class="etag">Airflow</span><span class="etag">dbt</span><span class="etag">Snowflake</span><span class="etag">Redshift</span><span class="etag">PostgreSQL</span><span class="etag">Java / Spring Boot</span><span class="etag">Docker</span><span class="etag">Kubernetes</span><span class="etag">HIPAA</span><span class="etag">SOC 2</span></div>
+      <div class="exp-tags"><span class="etag">LangGraph</span><span class="etag">LangChain</span><span class="etag">RAG</span><span class="etag">pgvector</span><span class="etag">PyTorch</span><span class="etag">PySpark</span><span class="etag">AWS Glue / EMR</span><span class="etag">Kafka</span><span class="etag">Airflow</span><span class="etag">dbt</span><span class="etag">Snowflake</span><span class="etag">FastAPI</span><span class="etag">Java / Spring Boot</span><span class="etag">Docker</span><span class="etag">Kubernetes</span><span class="etag">HIPAA</span></div>
+    </div>
+  </div>
+</div>
+    <!-- Technimus -->
+<div class="exp-row">
+  <div class="exp-trig">
+    <div class="exp-yr">Apr 2024 - Jul 2025</div>
+    <div class="exp-cw">
+      <img src="images/technimus_logo.png" alt="Technimus" class="exp-logo" onerror="this.style.background='var(--bg3)'">
+      <div><div class="exp-co">Technimus</div><div class="exp-role">Senior Database Administrator (Part-time)</div></div>
+    </div>
+    <span class="exp-bge eg-gray">1 year</span>
+    <div class="exp-chev">▾</div>
+  </div>
+  <div class="exp-body">
+    <div class="exp-cnt">
+      <div class="exp-rule"></div>
+      <p class="exp-intro">SaaS technology company based in Kathmandu, Nepal. Part-time database administration and data engineering role alongside Zakipoint, focused on multi-tenant cloud database management and data pipeline development.</p>
+      <ul class="exp-ul">
+        <li class="exp-li">Managed and optimized <strong>PostgreSQL databases on Aiven Cloud</strong> for multi-tenant SaaS environments; implemented connection pooling, query optimization, index tuning, and vacuuming strategies for production reliability.</li>
+        <li class="exp-li">Built <strong>ETL pipelines and automated data quality frameworks</strong> including schema enforcement, anomaly detection, and multi-rule reconciliation workflows; implemented AES+RSA application-layer encryption and RBAC for sensitive data protection.</li>
+        <li class="exp-li">Developed <strong>monitoring, alerting, and observability</strong> for database health, query performance, and pipeline SLA compliance; produced runbooks and operational documentation for incident triage and on-call support.</li>
+      </ul>
+      <div class="exp-tags"><span class="etag">PostgreSQL</span><span class="etag">Aiven Cloud</span><span class="etag">Python</span><span class="etag">ETL Pipelines</span><span class="etag">Data Quality</span><span class="etag">AES+RSA Encryption</span><span class="etag">RBAC</span><span class="etag">SQL</span></div>
     </div>
   </div>
 </div>
     <!-- Om Hospital -->
 <div class="exp-row">
   <div class="exp-trig">
-    <div class="exp-yr">Apr 2018 — Jul 2020</div>
+    <div class="exp-yr">Apr 2018 - Jul 2020</div>
     <div class="exp-cw">
       <img src="images/om_hospital_logo.jpg" alt="Om Hospital" class="exp-logo">
       <div><div class="exp-co">Om Hospital &amp; Research Centre</div><div class="exp-role">Data Engineer</div></div>
@@ -1149,172 +1145,105 @@ footer{
   <div class="exp-body">
     <div class="exp-cnt">
       <div class="exp-rule"></div>
-      <p class="exp-intro">Built the organization's first data infrastructure from the ground up — a 250,000-visit-per-year hospital with no centralized data layer, no digital records, and no analytics capability when I joined.</p>
+      <p class="exp-intro">Built the organization's first data infrastructure from the ground up - a 250,000-visit-per-year hospital with no centralized data layer, no digital records, and no analytics capability when I joined. Also managed pharmacy and hospital supply chain operations, applying inventory management concepts to reduce stockouts and improve procurement efficiency.</p>
       <ul class="exp-ul">
-        <li class="exp-li">Designed and built the hospital's <strong>first centralized data warehouse on GCP</strong> (BigQuery, Cloud SQL, GCS) from scratch — ingesting clinical events, lab results, and operational workflows across all departments into a single queryable system.</li>
-        <li class="exp-li">Led migration from paper records and legacy systems to <strong>DHIS2</strong>, digitizing three years of historical patient data and cutting manual reporting effort by 70%.</li>
-        <li class="exp-li">Built <strong>Python and SQL ETL pipelines</strong> transforming raw clinical data into analytics-ready datasets — improved reporting accuracy by 30% and reduced data preparation time by 50%.</li>
-        <li class="exp-li">Delivered <strong>eight Tableau and Power BI dashboards</strong> for patient flow, diagnosis trends, and outbreak monitoring — reduced average patient wait times by 25% by surfacing bottlenecks previously invisible to operations staff.</li>
+        <li class="exp-li">Designed and built the hospital's <strong>first centralized data warehouse on GCP</strong> (BigQuery, Cloud SQL, GCS) from scratch - integrating clinical events, lab results, billing, pharmacy, and operational workflows into a single queryable system.</li>
+        <li class="exp-li">Led migration from paper records and legacy systems to <strong>DHIS2</strong>, digitizing three years of historical patient data and cutting manual reporting effort by <strong>70%</strong>; implemented data validation frameworks and program validation procedures.</li>
+        <li class="exp-li">Built <strong>Python and SQL ETL pipelines</strong> transforming raw clinical data into analytics-ready datasets; delivered 8 Tableau and Power BI dashboards for patient flow, diagnosis trends, outbreak monitoring, and resource planning - improved reporting accuracy by <strong>30%</strong>.</li>
+        <li class="exp-li">Applied <strong>supply chain and inventory management</strong> to pharmacy operations: analyzed demand patterns and consumption data to support <strong>min/max inventory level setting</strong>, reorder point calculation, and stockout reduction; documented procurement workflows and supplier order cycles; built tracking tools for stock levels and order fulfillment rates.</li>
         <li class="exp-li">Implemented a <strong>digital visit recording and telemedicine system</strong> in Python supporting 10,000+ patients per month, enabling longitudinal patient histories across departments for the first time.</li>
       </ul>
-      <div class="exp-tags"><span class="etag">Python</span><span class="etag">SQL</span><span class="etag">GCP BigQuery</span><span class="etag">DHIS2</span><span class="etag">Tableau</span><span class="etag">Power BI</span><span class="etag">PostgreSQL</span></div>
+      <div class="exp-tags"><span class="etag">Python</span><span class="etag">SQL</span><span class="etag">GCP BigQuery</span><span class="etag">DHIS2</span><span class="etag">Tableau</span><span class="etag">Power BI</span><span class="etag">PostgreSQL</span><span class="etag">Supply Chain Analytics</span><span class="etag">Inventory Management</span><span class="etag">ETL Pipelines</span></div>
     </div>
   </div>
 </div>
 </div>
 </section>
 
-<!-- ═══ PROJECTS ══════════════════════════ -->
+<!--  PROJECTS  -->
 <section id="projects" class="sec">
   <div class="gn">03</div>
   <div class="sec-inner">
-    <div class="sec-lbl">03 <span>— projects</span></div>
+    <div class="sec-lbl">03 <span>- projects</span></div>
     <h2 class="sec-h">Featured Builds</h2>
 
-  <!-- ── FFIEC Spotlight ── -->
-  <div class="pc-spotlight rev" id="ffiec-spot">
-    <img src="images/ffiec.png" alt="FFIEC Analytics Platform" class="pcs-img" id="ffiec-img"
-      onerror="this.style.display='none';this.parentElement.querySelector('.pcs-img-ph').style.display='flex'">
-    <div class="pcs-img-ph"><div class="pcs-ph-glow"></div><div class="pcs-ph-n">FFIEC Call Report<br>Analytics Dashboard</div></div>
-    <div class="pcs-body">
-      <div>
-        <div class="pcs-eyebrow">Production · Data Engineering + AI</div>
-        <div class="pcs-title">FFIEC Call Report Analytics Dashboard</div>
+    <!-- PROJECT SELECTOR GRID -->
+    <div class="proj-sel-grid rev" id="proj-sel-grid">
 
-        <!-- Two hover pills -->
-        <div class="pcs-pills">
-          <!-- Pill 1: Who it's for + problem -->
-          <div class="pcs-pill pcs-pill-users">
-            Who it's for
-            <div class="pcs-popup">
-              <div class="pp-ttl pp-ttl-users">Target users &amp; problem solved</div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-users"></div>
-                <div class="pp-text"><strong>Bank examiners &amp; regulators</strong> — currently download raw SDF zip files quarterly, run manual spreadsheet calculations, and wait days for peer comparisons. This makes it instant.</div>
-              </div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-users"></div>
-                <div class="pp-text"><strong>Financial analysts at banks</strong> — building UBPR ratios by hand from schedule line items. The formula builder exposes every numerator/denominator (UBPR code → field name) and computes across all peers in one query.</div>
-              </div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-users"></div>
-                <div class="pp-text"><strong>Research teams &amp; academics</strong> — need longitudinal call report data without paying Bloomberg or navigating FFIEC's raw bulk downloads. 8 quarters, any bank, sub-200ms.</div>
-              </div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-users"></div>
-                <div class="pp-text"><strong>The core problem:</strong> FFIEC data is public but practically inaccessible — raw files, no query interface, no comparisons, no trend analysis. This platform closes that gap entirely.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pill 2: Future enhancements -->
-          <div class="pcs-pill pcs-pill-future">
-            Roadmap
-            <div class="pcs-popup" style="left:auto;right:0">
-              <div class="pp-ttl pp-ttl-future">Pipeline enhancements in progress</div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-future"></div>
-                <div class="pp-text"><strong>Financial Analysis module</strong> — side-by-side profitability, liquidity, and capital ratio comparison across up to 4 banks with ranked peer percentiles.</div>
-              </div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-future"></div>
-                <div class="pp-text"><strong>Statistical Analysis</strong> — distribution charts, z-score outlier detection, and correlation matrices across UBPR metrics for a selected peer group.</div>
-              </div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-future"></div>
-                <div class="pp-text"><strong>Predictive Statistics</strong> — time-series forecasting on key ratios (NIM, ROA, Tier 1 capital) using historical call report trends.</div>
-              </div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-future"></div>
-                <div class="pp-text"><strong>Prescriptions engine</strong> — AI-generated recommendations flagging ratios outside peer norms with suggested corrective actions grounded in regulatory guidance.</div>
-              </div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-future"></div>
-                <div class="pp-text"><strong>Google Scholar integration</strong> — inline citations linking ratio anomalies to published banking research papers.</div>
-              </div>
-              <div class="pp-row">
-                <div class="pp-dot pp-dot-future"></div>
-                <div class="pp-text"><strong>User accounts &amp; profiles</strong> — saved bank watchlists, custom ratio dashboards, and persistent query history per user.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pcs-desc">
-          Regulatory data platform that makes 8 quarters of FFIEC Call Report data queryable in under 200ms — down from 8–15 seconds via the live API. Bank examiners, analysts, and researchers currently download raw SDF zip files, calculate ratios manually, and have no way to compare peers dynamically. This platform eliminates all three friction points.<br><br>
-          The <strong style="color:var(--w)">UBPR formula builder</strong> lets users construct any ratio from raw schedule fields. Each formula shows the exact numerator and denominator with UBPR codes:
-        </div>
-
-        <!-- UBPR ratio table -->
-        <div class="ubpr-table">
-          <div class="ubpr-row ubpr-hd">
-            <div class="ubpr-cell dim">Ratio</div>
-            <div class="ubpr-div"></div>
-            <div class="ubpr-cell dim">Numerator → Denominator</div>
-          </div>
-          <div class="ubpr-row">
-            <div class="ubpr-cell"><strong>NIM</strong></div>
-            <div class="ubpr-div"></div>
-            <div class="ubpr-cell">UBPRE076 → UBPR3368</div>
-          </div>
-          <div class="ubpr-row">
-            <div class="ubpr-cell"><strong>ROA</strong></div>
-            <div class="ubpr-div"></div>
-            <div class="ubpr-cell">UBPR4340 → UBPR2170</div>
-          </div>
-          <div class="ubpr-row">
-            <div class="ubpr-cell"><strong>Tier 1 Capital Ratio</strong></div>
-            <div class="ubpr-div"></div>
-            <div class="ubpr-cell">UBPR7206 → UBPR7205</div>
-          </div>
-          <div class="ubpr-row">
-            <div class="ubpr-cell"><strong>Loan-to-Deposit</strong></div>
-            <div class="ubpr-div"></div>
-            <div class="ubpr-cell">UBPR2122 → UBPR2200</div>
-          </div>
-        </div>
-
-        <div class="pcs-desc" style="margin-top:0">
-          PySpark normalizes raw SDF files into partitioned Parquet on Cloudflare R2. DuckDB queries via httpfs with in-process column caching — zero egress, no staging. A three-agent LangGraph + Gemini system handles natural-language queries: router classifies intent, DuckDB agent generates SQL with bank and quarter injected as context, synthesis agent frames the answer in regulatory terms.
-        </div>
-
-        <div class="pcs-arch">
-          <span class="al">arch</span>
-          <span class="an an-a">FFIEC SDF</span><span class="parr">→</span>
-          <span class="an an-b">PySpark</span><span class="parr">→</span>
-          <span class="an an-g">R2 Parquet</span><span class="parr">→</span>
-          <span class="an an-b">DuckDB httpfs</span><span class="parr">→</span>
-          <span class="an an-b">FastAPI</span><span class="parr">→</span>
-          <span class="an an-g">React/Vite</span><span class="parr">→</span>
-          <span class="an an-p">LangGraph</span><span class="parr">→</span>
-          <span class="an an-p">Gemini</span>
-        </div>
-        <div class="pcs-tags">
-          <span class="ptag">Python</span><span class="ptag">PySpark</span><span class="ptag">DuckDB</span><span class="ptag">Cloudflare R2</span><span class="ptag">FastAPI</span><span class="ptag">React/Vite</span><span class="ptag">LangChain</span><span class="ptag">LangGraph</span><span class="ptag">Gemini 1.5 Flash</span><span class="ptag">Vercel</span><span class="ptag">Render</span>
-        </div>
+      <div class="proj-sel-card active" data-proj="ffiec">
+        <div class="proj-sel-badge">Live</div>
+        <div class="proj-sel-cat">Data Engineering + AI</div>
+        <div class="proj-sel-name">FFIEC Bank Analytics</div>
+        <div class="proj-sel-tags"><span>PySpark</span><span>DuckDB</span><span>LangGraph</span><span>FastAPI</span></div>
       </div>
-      <div class="pcs-foot">
-        <a href="https://ffiec-call-report-builder.vercel.app/" target="_blank" rel="noopener" class="plb plb-g">↗ Live App</a>
-        <a href="https://github.com/suyog12/ffiec-call-report-builder" target="_blank" rel="noopener" class="plb plb-b">GitHub</a>
+
+      <div class="proj-sel-card" data-proj="lackey">
+        <div class="proj-sel-badge lackey-badge">HIPAA</div>
+        <div class="proj-sel-cat">Machine Learning</div>
+        <div class="proj-sel-name">Patient Churn Prediction</div>
+        <div class="proj-sel-tags"><span>Python</span><span>R / caret</span><span>XGBoost</span><span>ICD-10</span></div>
       </div>
+
+      <div class="proj-sel-card" data-proj="ssrm">
+        <div class="proj-sel-badge ssrm-badge">Building</div>
+        <div class="proj-sel-cat">Multi-Agent AI</div>
+        <div class="proj-sel-name">Service by SSRM</div>
+        <div class="proj-sel-tags"><span>LangGraph</span><span>Kafka</span><span>PostgreSQL</span><span>React</span></div>
+      </div>
+
+      <div class="proj-sel-card" data-proj="enterprise">
+        <div class="proj-sel-badge ent-badge">Capstone</div>
+        <div class="proj-sel-cat">Analytics + ML</div>
+        <div class="proj-sel-name">Enterprise Analytics Platform</div>
+        <div class="proj-sel-tags"><span>DuckDB</span><span>FastAPI</span><span>scikit-learn</span><span>266 tests</span></div>
+      </div>
+
     </div>
-  </div>
 
-    <!-- ── Lackey Clinic Spotlight ── -->
-    <div class="pc-spotlight spot2 rev d1" id="lackey-spot">
-      <div class="pcs-img-ph"><div class="pcs-ph-glow" style="background:radial-gradient(circle,rgba(45,212,191,.07) 0%,transparent 70%)"></div><div class="pcs-ph-n">Lackey Free Clinic<br>Patient Churn Prediction</div></div>
-      <div class="pcs-body">
-        <div>
-          <div class="pcs-eyebrow">Academic · Machine Learning · HIPAA</div>
-          <div class="pcs-title">Lackey Free Clinic — Patient Churn Prediction</div>
-          <div class="pcs-desc">
-            End-to-end ML pipeline on HIPAA-restricted clinical and claims data for Lackey Free Clinic, a non-profit serving underinsured patients in Williamsburg, VA. The goal: predict which patients are at risk of disengaging so the clinic can do proactive outreach before they churn.<br><br>
-            <strong style="color:var(--w)">Data cleaning (Python):</strong> ICD-9 to ICD-10 mapping via patched lookup + CMS Section 111 reference achieving under 2% unknown. Charlson Comorbidity Index (17 conditions) and Elixhauser Index (31 conditions) computed per patient. Duplicate encounters resolved, date fields normalized.<br><br>
-            <strong style="color:var(--w)">Feature engineering:</strong> Recency, frequency, intensity, comorbidity score, SDOH proxies, specialty mix, visit trend direction. Churn label: no encounter in next 365 days.<br><br>
-            <strong style="color:var(--w)">Modeling (R, caret):</strong> 7 models with 5-fold CV — logistic regression, LDA, random forest, XGBoost, SVM, neural net, elastic net. OB/GYN specialty submodels trained separately after EDA showed distinct churn patterns. Final model selected on AUC at 0.3 threshold.
+    <!-- DETAIL PANEL -->
+    <div class="proj-detail-panel rev d1">
+
+      <!-- FFIEC -->
+      <div class="proj-detail active" id="detail-ffiec">
+        <div class="proj-detail-left">
+          <div class="proj-detail-eyebrow">Production · Data Engineering + AI</div>
+          <h3 class="proj-detail-title">FFIEC Call Report Analytics Dashboard</h3>
+          <p class="proj-detail-desc">Makes 8 quarters of FFIEC Call Report data queryable in under 200ms, down from 8 to 15 seconds via the live API. Bank examiners and analysts currently download raw SDF zip files, calculate ratios manually, and have no way to compare peers dynamically. This platform eliminates all three friction points with a UBPR formula builder, multi-bank comparison, and a three-agent LangGraph AI assistant for natural-language regulatory analysis.</p>
+          <div class="proj-detail-arch">
+            <span class="an an-a">FFIEC SDF</span><span class="parr">→</span>
+            <span class="an an-b">PySpark</span><span class="parr">→</span>
+            <span class="an an-g">R2 Parquet</span><span class="parr">→</span>
+            <span class="an an-b">DuckDB httpfs</span><span class="parr">→</span>
+            <span class="an an-b">FastAPI</span><span class="parr">→</span>
+            <span class="an an-g">React/Vite</span><span class="parr">→</span>
+            <span class="an an-p">LangGraph</span><span class="parr">→</span>
+            <span class="an an-p">Gemini</span>
           </div>
-          <div class="pcs-arch">
-            <span class="al">arch</span>
+          <div class="proj-detail-foot">
+            <a href="https://ffiec-call-report-builder.vercel.app/" target="_blank" rel="noopener" class="plb plb-g">Live App</a>
+            <a href="https://github.com/suyog12/ffiec-call-report-builder" target="_blank" rel="noopener" class="plb plb-b">GitHub</a>
+          </div>
+        </div>
+        <div class="proj-detail-right">
+          <div class="proj-stat-grid">
+            <div class="proj-stat"><div class="proj-stat-v">&lt;200ms</div><div class="proj-stat-l">Query latency</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">40x</div><div class="proj-stat-l">Speedup vs baseline</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">8,000+</div><div class="proj-stat-l">Banks covered</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">3</div><div class="proj-stat-l">AI agents</div></div>
+          </div>
+          <div class="proj-detail-tags">
+            <span class="ptag">Python</span><span class="ptag">PySpark</span><span class="ptag">DuckDB</span><span class="ptag">Cloudflare R2</span><span class="ptag">FastAPI</span><span class="ptag">React/Vite</span><span class="ptag">LangChain</span><span class="ptag">LangGraph</span><span class="ptag">Gemini</span><span class="ptag">Vercel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LACKEY -->
+      <div class="proj-detail" id="detail-lackey">
+        <div class="proj-detail-left">
+          <div class="proj-detail-eyebrow">Academic · Machine Learning · HIPAA</div>
+          <h3 class="proj-detail-title">Lackey Free Clinic - Patient Churn Prediction</h3>
+          <p class="proj-detail-desc">End-to-end ML pipeline on HIPAA-restricted clinical data for a free clinic serving underinsured patients in Williamsburg, VA. The goal was to predict which patients were likely to disengage so the clinic could reach out before they churned. ICD-9 to ICD-10 mapping at under 2% unknown rate, Charlson and Elixhauser comorbidity scoring, and a seven-model comparison via R caret with specialty-specific OB/GYN submodels and a 365-day lookahead window.</p>
+          <div class="proj-detail-arch">
             <span class="an an-a">Raw EHR CSVs</span><span class="parr">→</span>
             <span class="an an-b">ICD-10 mapping</span><span class="parr">→</span>
             <span class="an an-b">Comorbidity scores</span><span class="parr">→</span>
@@ -1322,20 +1251,87 @@ footer{
             <span class="an an-g">7 models / caret</span><span class="parr">→</span>
             <span class="an an-g">ROC / AUC eval</span>
           </div>
-          <div class="pcs-tags">
+          <div class="proj-detail-foot">
+            <span class="plb plb-b" style="opacity:.5;cursor:default">HIPAA Restricted - code private</span>
+          </div>
+        </div>
+        <div class="proj-detail-right">
+          <div class="proj-stat-grid">
+            <div class="proj-stat"><div class="proj-stat-v">&lt;2%</div><div class="proj-stat-l">ICD-10 unknown rate</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">7</div><div class="proj-stat-l">ML algorithms tested</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">365</div><div class="proj-stat-l">Day prediction window</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">2</div><div class="proj-stat-l">Specialty submodels</div></div>
+          </div>
+          <div class="proj-detail-tags">
             <span class="ptag">Python</span><span class="ptag">R</span><span class="ptag">tidyverse</span><span class="ptag">caret</span><span class="ptag">randomForest</span><span class="ptag">xgboost</span><span class="ptag">glmnet</span><span class="ptag">pROC</span><span class="ptag">ICD-10</span><span class="ptag">HIPAA</span>
           </div>
         </div>
-        <div class="pcs-foot">
-          <span class="plb plb-b" style="opacity:.5;cursor:default">HIPAA Restricted — code private</span>
+      </div>
+
+      <!-- SSRM -->
+      <div class="proj-detail" id="detail-ssrm">
+        <div class="proj-detail-left">
+          <div class="proj-detail-eyebrow">In Development · Multi-Agent AI · Service Intelligence</div>
+          <h3 class="proj-detail-title">Service by SSRM</h3>
+          <p class="proj-detail-desc">A multi-agent AI platform being built to transform how service businesses manage operations, client relationships, and business intelligence. A LangGraph agent network splits work across a scheduling agent, a client intelligence agent, and an analytics agent that generates plain-language business summaries. Every agent action is logged and reversible, served through a FastAPI backend with event-sourced PostgreSQL and Kafka for real-time sync.</p>
+          <div class="proj-detail-arch">
+            <span class="an an-a">Service data</span><span class="parr">→</span>
+            <span class="an an-b">FastAPI backend</span><span class="parr">→</span>
+            <span class="an an-b">PostgreSQL + Kafka</span><span class="parr">→</span>
+            <span class="an an-p">LangGraph agents</span><span class="parr">→</span>
+            <span class="an an-g">React dashboard</span>
+          </div>
+          <div class="proj-detail-foot">
+            <span class="plb plb-b" style="opacity:.5;cursor:default">In Development</span>
+          </div>
+        </div>
+        <div class="proj-detail-right">
+          <div class="proj-stat-grid">
+            <div class="proj-stat"><div class="proj-stat-v">3</div><div class="proj-stat-l">Specialized agents</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">Event</div><div class="proj-stat-l">Sourced architecture</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">Real-time</div><div class="proj-stat-l">Kafka sync</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">Full</div><div class="proj-stat-l">Audit trail</div></div>
+          </div>
+          <div class="proj-detail-tags">
+            <span class="ptag">Python</span><span class="ptag">LangGraph</span><span class="ptag">LangChain</span><span class="ptag">FastAPI</span><span class="ptag">PostgreSQL</span><span class="ptag">Kafka</span><span class="ptag">React</span><span class="ptag">Anthropic Claude API</span>
+          </div>
         </div>
       </div>
+
+      <!-- ENTERPRISE -->
+      <div class="proj-detail" id="detail-enterprise">
+        <div class="proj-detail-left">
+          <div class="proj-detail-eyebrow">W&amp;M MSBA Capstone · Data Engineering + ML</div>
+          <h3 class="proj-detail-title">Enterprise Analytics and ML Platform</h3>
+          <p class="proj-detail-desc">End-to-end analytics and ML platform built for a Fortune 9 enterprise partner as the William and Mary MSBA capstone. Handles 110.4M transactions representing $8.23B in revenue. Dimensional star schema with incremental ETL, DuckDB columnar engine at sub-500ms P95, an 8-signal hybrid recommendation engine at 91.9% hit rate versus 70.2% baseline, and a full pytest suite at 98.87% pass rate.</p>
+          <div class="proj-detail-arch">
+            <span class="an an-a">110.4M transactions</span><span class="parr">→</span>
+            <span class="an an-b">ETL / Star schema</span><span class="parr">→</span>
+            <span class="an an-b">DuckDB + PostgreSQL</span><span class="parr">→</span>
+            <span class="an an-p">ML engine (8 signals)</span><span class="parr">→</span>
+            <span class="an an-g">FastAPI (53 endpoints)</span>
+          </div>
+          <div class="proj-detail-foot">
+            <a href="https://github.com/suyog12/capstone" target="_blank" rel="noopener" class="plb plb-b">GitHub</a>
+          </div>
+        </div>
+        <div class="proj-detail-right">
+          <div class="proj-stat-grid">
+            <div class="proj-stat"><div class="proj-stat-v">110.4M</div><div class="proj-stat-l">Transactions processed</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">91.9%</div><div class="proj-stat-l">ML hit rate</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">266</div><div class="proj-stat-l">Automated tests</div></div>
+            <div class="proj-stat"><div class="proj-stat-v">98.87%</div><div class="proj-stat-l">Test pass rate</div></div>
+          </div>
+          <div class="proj-detail-tags">
+            <span class="ptag">Python</span><span class="ptag">SQL</span><span class="ptag">PostgreSQL</span><span class="ptag">DuckDB</span><span class="ptag">scikit-learn</span><span class="ptag">XGBoost</span><span class="ptag">FastAPI</span><span class="ptag">React</span><span class="ptag">pytest</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- ── Supporting projects divider ── -->
-    <div class="proj-divider rev d2">Other Professional Projects</div>
-
-    <!-- Filter buttons for supporting grid only -->
+    <!-- SUPPORTING PROJECTS DIVIDER -->
+    <div class="proj-divider rev d2">Other Projects</div>
     <div class="pf-row rev d2">
       <button class="pf on" data-cat="all">All</button>
       <button class="pf" data-cat="data-eng">Data Engineering</button>
@@ -1348,62 +1344,40 @@ footer{
   </div>
 </section>
 
-<!-- ═══ SKILLS ════════════════════════════ -->
+<!-- SKILLS -->
 <section id="skills" class="sec">
   <div class="gn">04</div>
   <div class="sec-inner">
-    <div class="sec-lbl">04 <span>— skills</span></div>
+    <div class="sec-lbl">04 <span>- skills</span></div>
     <h2 class="sec-h">Technical Stack</h2>
     <div class="sk-table rev">
-      <div class="sk-row"><div class="sk-cat">Big Data &amp; ETL</div><div class="sk-tags"><span class="stag hi">PySpark</span><span class="stag hi">Spark SQL</span><span class="stag hi">Airflow</span><span class="stag hi">dbt</span><span class="stag">Kafka</span><span class="stag">Delta Lake</span><span class="stag">Hadoop/HDFS</span><span class="stag">Parquet</span></div></div>
-      <div class="sk-row"><div class="sk-cat">Cloud &amp; Storage</div><div class="sk-tags"><span class="stag hi">AWS EMR</span><span class="stag hi">AWS Glue</span><span class="stag hi">AWS S3</span><span class="stag">GCP BigQuery</span><span class="stag">GCP Dataproc</span><span class="stag">Azure Databricks</span><span class="stag">Cloudflare R2</span></div></div>
-      <div class="sk-row"><div class="sk-cat">Warehousing</div><div class="sk-tags"><span class="stag">Snowflake</span><span class="stag">Redshift</span><span class="stag hi">DuckDB</span><span class="stag">PostgreSQL</span><span class="stag">MySQL</span><span class="stag">MongoDB</span><span class="stag">Elasticsearch</span></div></div>
-      <div class="sk-row"><div class="sk-cat">AI / ML</div><div class="sk-tags"><span class="stag wm">LangChain</span><span class="stag wm">LangGraph</span><span class="stag wm">Gemini</span><span class="stag">FAISS</span><span class="stag">Feature Engineering</span><span class="stag">R / caret</span><span class="stag">xgboost</span></div></div>
-      <div class="sk-row"><div class="sk-cat">Languages &amp; APIs</div><div class="sk-tags"><span class="stag hi">Python</span><span class="stag hi">SQL</span><span class="stag">Java</span><span class="stag">R</span><span class="stag">FastAPI</span><span class="stag">Spring Boot</span><span class="stag">React</span></div></div>
-      <div class="sk-row"><div class="sk-cat">DevOps &amp; Ops</div><div class="sk-tags"><span class="stag">Docker</span><span class="stag">Kubernetes</span><span class="stag">CI/CD</span><span class="stag">HIPAA</span><span class="stag">SOC 2</span><span class="stag">SLA/SLO</span><span class="stag">ICD-10</span></div></div>
-    </div>
-    <div class="sk-bars rev d1">
-      <div class="skb">
-        <div class="skb-ttl">Core data engineering</div>
-        <div class="skb-r"><span class="skb-n">PySpark / Spark SQL</span><div class="skb-tr"><div class="skb-f" data-w="97"></div></div></div>
-        <div class="skb-r"><span class="skb-n">Python / SQL</span><div class="skb-tr"><div class="skb-f" data-w="97"></div></div></div>
-        <div class="skb-r"><span class="skb-n">Airflow / dbt</span><div class="skb-tr"><div class="skb-f" data-w="92"></div></div></div>
-        <div class="skb-r"><span class="skb-n">AWS EMR / Glue / S3</span><div class="skb-tr"><div class="skb-f" data-w="90"></div></div></div>
-        <div class="skb-r"><span class="skb-n">DuckDB / Parquet</span><div class="skb-tr"><div class="skb-f" data-w="90"></div></div></div>
-        <div class="skb-r"><span class="skb-n">Snowflake / Redshift</span><div class="skb-tr"><div class="skb-f" data-w="88"></div></div></div>
-        <div class="skb-r"><span class="skb-n">Kafka / Streaming</span><div class="skb-tr"><div class="skb-f" data-w="85"></div></div></div>
-        <div class="skb-r"><span class="skb-n">GCP BigQuery</span><div class="skb-tr"><div class="skb-f" data-w="82"></div></div></div>
-      </div>
-      <div class="skb">
-        <div class="skb-ttl">AI, modeling and APIs</div>
-        <div class="skb-r"><span class="skb-n">Dimensional Modeling</span><div class="skb-tr"><div class="skb-f" data-w="93"></div></div></div>
-        <div class="skb-r"><span class="skb-n">FastAPI / Spring Boot</span><div class="skb-tr"><div class="skb-f" data-w="88"></div></div></div>
-        <div class="skb-r"><span class="skb-n">ML Feature Engineering</span><div class="skb-tr"><div class="skb-f" data-w="87"></div></div></div>
-        <div class="skb-r"><span class="skb-n">LangChain / LangGraph</span><div class="skb-tr"><div class="skb-f" data-w="85"></div></div></div>
-        <div class="skb-r"><span class="skb-n">Docker / Kubernetes</span><div class="skb-tr"><div class="skb-f" data-w="80"></div></div></div>
-        <div class="skb-r"><span class="skb-n">R / Statistical Analysis</span><div class="skb-tr"><div class="skb-f" data-w="78"></div></div></div>
-        <div class="skb-r"><span class="skb-n">React / Vite</span><div class="skb-tr"><div class="skb-f" data-w="72"></div></div></div>
-        <div class="skb-r"><span class="skb-n">Tableau / Power BI</span><div class="skb-tr"><div class="skb-f" data-w="80"></div></div></div>
-      </div>
+      <div class="sk-row"><div class="sk-cat">AI / LLM</div><div class="sk-tags"><span class="stag hi">LangGraph</span><span class="stag hi">LangChain</span><span class="stag hi">RAG Pipelines</span><span class="stag hi">pgvector / FAISS</span><span class="stag hi">LLM Evaluation</span><span class="stag hi">MLOps / LLMOps</span><span class="stag wm">Claude API</span><span class="stag wm">OpenAI API</span><span class="stag wm">Gemini</span><span class="stag">PyTorch</span><span class="stag">Hugging Face</span><span class="stag">Fine-tuning (LoRA)</span></div></div>
+      <div class="sk-row"><div class="sk-cat">Data Engineering</div><div class="sk-tags"><span class="stag hi">PySpark</span><span class="stag hi">Spark SQL</span><span class="stag hi">Apache Airflow</span><span class="stag hi">dbt</span><span class="stag hi">DuckDB</span><span class="stag">Kafka</span><span class="stag">Delta Lake</span><span class="stag">Hadoop / HDFS</span><span class="stag">Parquet</span></div></div>
+      <div class="sk-row"><div class="sk-cat">Cloud</div><div class="sk-tags"><span class="stag hi">AWS (S3, Glue, EMR, Lambda, Redshift)</span><span class="stag">GCP (BigQuery, Dataproc)</span><span class="stag">Azure Databricks</span><span class="stag">Cloudflare R2</span></div></div>
+      <div class="sk-row"><div class="sk-cat">Databases</div><div class="sk-tags"><span class="stag hi">PostgreSQL</span><span class="stag hi">Snowflake</span><span class="stag">Redshift</span><span class="stag">MySQL</span><span class="stag">MongoDB</span><span class="stag">Elasticsearch</span></div></div>
+      <div class="sk-row"><div class="sk-cat">Languages</div><div class="sk-tags"><span class="stag hi">Python</span><span class="stag hi">SQL</span><span class="stag">Java</span><span class="stag">R</span><span class="stag">TypeScript</span><span class="stag">Bash</span></div></div>
+      <div class="sk-row"><div class="sk-cat">APIs &amp; Applications</div><div class="sk-tags"><span class="stag hi">FastAPI</span><span class="stag hi">React / Vite</span><span class="stag">Spring Boot</span><span class="stag">Flask</span><span class="stag">SSE Streaming</span><span class="stag">JWT / OAuth</span></div></div>
+      <div class="sk-row"><div class="sk-cat">DevOps &amp; Governance</div><div class="sk-tags"><span class="stag">Docker</span><span class="stag">Kubernetes</span><span class="stag">Terraform</span><span class="stag">GitHub Actions</span><span class="stag">HIPAA / HITRUST</span><span class="stag">SOC 2</span><span class="stag">ICD-10</span><span class="stag">FHIR R4</span></div></div>
+      <div class="sk-row"><div class="sk-cat">Analytics &amp; BI</div><div class="sk-tags"><span class="stag">Power BI</span><span class="stag">Tableau</span><span class="stag">Plotly Dash</span><span class="stag">scikit-learn</span><span class="stag">XGBoost</span><span class="stag">Statistical Modeling</span><span class="stag">R / caret</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ EDUCATION ════════════════════════ -->
+<!--  EDUCATION  -->
 <section id="education" class="sec">
   <div class="gn">05</div>
   <div class="sec-inner">
-    <div class="sec-lbl">05 <span>— education &amp; certifications</span></div>
+    <div class="sec-lbl">05 <span>- education &amp; certifications</span></div>
     <h2 class="sec-h">Academic &amp;<br><span class="dim">Credentials</span></h2>
     <div class="edu-g rev">
-      <div class="edu-c"><img src="images/william_and_mary.png" alt="W&M" class="edu-logo"><div><div class="edu-deg">MS Business Analytics</div><div class="edu-school">William &amp; Mary — Mason School of Business</div><div class="edu-dt">Aug 2025 — May 2026</div><div class="edu-note">Graduate Research Assistant</div></div></div>
-      <div class="edu-c"><img src="images/vit_logo.jpeg" alt="VIT" class="edu-logo"><div><div class="edu-deg">B.Tech Computer Science Engineering</div><div class="edu-school">Vellore Institute of Technology</div><div class="edu-dt">Aug 2018 — May 2022</div><div class="edu-note">Data Engineering — Distributed Systems — Algorithms</div></div></div>
+      <div class="edu-c"><img src="images/william_and_mary.png" alt="W&M" class="edu-logo"><div><div class="edu-deg">MS Business Analytics</div><div class="edu-school">William &amp; Mary - Mason School of Business</div><div class="edu-dt">Aug 2025 - May 2026</div><div class="edu-note">Graduate Research Assistant - Completed May 2026</div></div></div>
+      <div class="edu-c"><img src="images/vit_logo.jpeg" alt="VIT" class="edu-logo"><div><div class="edu-deg">B.Tech Computer Science Engineering</div><div class="edu-school">Vellore Institute of Technology</div><div class="edu-dt">Aug 2018 - May 2022</div><div class="edu-note">Data Engineering - Distributed Systems - Algorithms</div></div></div>
     </div>
     <div style="font-family:var(--mono);font-size:10px;color:var(--g2);letter-spacing:.1em;text-transform:uppercase;margin:36px 0 14px">Professional certifications</div>
     <div class="cert-g rev d1">
-      <div class="cert-c"><img src="images/packt-logo.png" class="cert-logo" alt="Packt"><div><div class="cert-n">Mastering Azure Databricks for Data Engineers</div><div class="cert-i">Packt — Coursera</div><a href="https://www.coursera.org/account/accomplishments/specialization/E88JL856503G" target="_blank" class="cert-lk">View certificate</a></div></div>
-      <div class="cert-c"><img src="images/google-logo.png" class="cert-logo" alt="Google"><div><div class="cert-n">Google Data Analytics</div><div class="cert-i">Google — Coursera</div><a href="https://www.coursera.org/account/accomplishments/professional-cert/BLT5E7F8NUT9" target="_blank" class="cert-lk">View certificate</a></div></div>
-      <div class="cert-c"><img src="images/duke-logo.png" class="cert-logo" alt="Duke"><div><div class="cert-n">Data Analysis with R</div><div class="cert-i">Duke University — Coursera</div><a href="https://www.coursera.org/account/accomplishments/specialization/59WJ75V8402C" target="_blank" class="cert-lk">View certificate</a></div></div>
+      <div class="cert-c"><img src="images/packt-logo.png" class="cert-logo" alt="Packt"><div><div class="cert-n">Mastering Azure Databricks for Data Engineers</div><div class="cert-i">Packt - Coursera</div><a href="https://www.coursera.org/account/accomplishments/specialization/E88JL856503G" target="_blank" class="cert-lk">View certificate</a></div></div>
+      <div class="cert-c"><img src="images/google-logo.png" class="cert-logo" alt="Google"><div><div class="cert-n">Google Data Analytics</div><div class="cert-i">Google - Coursera</div><a href="https://www.coursera.org/account/accomplishments/professional-cert/BLT5E7F8NUT9" target="_blank" class="cert-lk">View certificate</a></div></div>
+      <div class="cert-c"><img src="images/duke-logo.png" class="cert-logo" alt="Duke"><div><div class="cert-n">Data Analysis with R</div><div class="cert-i">Duke University - Coursera</div><a href="https://www.coursera.org/account/accomplishments/specialization/59WJ75V8402C" target="_blank" class="cert-lk">View certificate</a></div></div>
     </div>
     <div style="font-family:var(--mono);font-size:10px;color:var(--g2);letter-spacing:.1em;text-transform:uppercase;margin:28px 0 14px">Course certifications</div>
     <div class="cert-g rev d2">
@@ -1411,109 +1385,78 @@ footer{
       <div class="cert-c"><img src="images/upenn-logo.png" class="cert-logo" alt="UPenn"><div><div class="cert-n">Introduction to Operations Management</div><div class="cert-i">University of Pennsylvania</div><a href="https://www.coursera.org/account/accomplishments/verify/LVF3XRVF82QD" target="_blank" class="cert-lk">View</a></div></div>
       <div class="cert-c"><img src="images/upenn-logo.png" class="cert-logo" alt="UPenn"><div><div class="cert-n">Financial Accounting</div><div class="cert-i">University of Pennsylvania</div><a href="https://www.coursera.org/account/accomplishments/verify/XPL2KL69NY77" target="_blank" class="cert-lk">View</a></div></div>
       <div class="cert-c"><img src="images/upenn-logo.png" class="cert-logo" alt="UPenn"><div><div class="cert-n">Corporate Finance</div><div class="cert-i">University of Pennsylvania</div><a href="https://www.coursera.org/account/accomplishments/verify/QJX6QA5RYEJS" target="_blank" class="cert-lk">View</a></div></div>
-      <div class="cert-c"><img src="images/hkust.png" class="cert-logo" alt="HKUST"><div><div class="cert-n">React Development</div><div class="cert-i">HKUST — Coursera</div><a href="https://www.coursera.org/account/accomplishments/verify/CJSX7HF48KTJ" target="_blank" class="cert-lk">View</a></div></div>
+      <div class="cert-c"><img src="images/hkust.png" class="cert-logo" alt="HKUST"><div><div class="cert-n">React Development</div><div class="cert-i">HKUST - Coursera</div><a href="https://www.coursera.org/account/accomplishments/verify/CJSX7HF48KTJ" target="_blank" class="cert-lk">View</a></div></div>
       <div class="cert-c"><img src="images/University-of-Minnesota-Logo.png" class="cert-logo" alt="UMN"><div><div class="cert-n">Software Testing</div><div class="cert-i">University of Minnesota</div><a href="https://www.coursera.org/account/accomplishments/verify/WL2E278C3V6A" target="_blank" class="cert-lk">View</a></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ RESUME ════════════════════════════════════════════ -->
+<!-- RESUME -->
 <section id="resume" class="sec">
   <div class="gn">06</div>
   <div class="sec-inner">
-    <div class="sec-lbl">06 <span>— résumé &amp; open to</span></div>
-    <h2 class="sec-h">Roles I'm<br><span class="dim">targeting</span></h2>
+    <div class="sec-lbl">06 <span>- résumé</span></div>
+    <h2 class="sec-h">Open to <em>Senior AI Engineer</em>,<br><span class="dim">Senior Data Engineer, ML Engineer</span></h2>
 
-    <div class="roles-grid rev">
-      <div class="role-card">
-        <div class="role-icon-lbl">DE</div>
-        <div class="role-title">Data Engineer</div>
-        <div class="role-level">Mid / Senior</div>
-        <div class="role-desc">Production pipelines, ETL/ELT, cloud data platforms, Spark, Airflow, dbt, warehousing at scale.</div>
+    <div class="resume-cards rev">
+      <div class="resume-role-card">
+        <div class="rrc-icon">AI</div>
+        <div class="rrc-title">AI Engineer</div>
+        <div class="rrc-level">Senior / Lead</div>
+        <div class="rrc-desc">LangGraph agentic systems, RAG architectures, LLMOps, production model deployment.</div>
       </div>
-
-      <div class="role-card">
-        <div class="role-icon-lbl">SDE</div>
-        <div class="role-title">Senior Data Engineer</div>
-        <div class="role-level">Senior / Staff</div>
-        <div class="role-desc">Architecture ownership, SLA governance, cross-team data infrastructure, mentorship, and platform reliability.</div>
+      <div class="resume-role-card">
+        <div class="rrc-icon">DE</div>
+        <div class="rrc-title">Senior Data Engineer</div>
+        <div class="rrc-level">Senior / Staff</div>
+        <div class="rrc-desc">10TB+ scale pipelines, Spark, Airflow, cloud data platforms, SLA governance.</div>
       </div>
-
-      <div class="role-card">
-        <div class="role-icon-lbl">ML</div>
-        <div class="role-title">Senior Data Engineer (ML/AI)</div>
-        <div class="role-level">Senior / Staff</div>
-        <div class="role-desc">ML feature pipelines, LLM integration, LangChain/LangGraph orchestration, and AI-ready data infrastructure.</div>
+      <div class="resume-role-card">
+        <div class="rrc-icon">ML</div>
+        <div class="rrc-title">ML Engineer</div>
+        <div class="rrc-level">Senior</div>
+        <div class="rrc-desc">Feature pipelines, clinical ML, PyTorch, scikit-learn, production model serving.</div>
       </div>
-
-      <div class="role-card">
-        <div class="role-icon-lbl">AE</div>
-        <div class="role-title">Analytics Engineer</div>
-        <div class="role-level">Mid / Senior</div>
-        <div class="role-desc">dbt transformations, dimensional modeling, KPI layers, self-serve analytics, and canonical metric definitions.</div>
+      <div class="resume-role-card">
+        <div class="rrc-icon">HC</div>
+        <div class="rrc-title">Healthcare Data Engineer</div>
+        <div class="rrc-level">Senior</div>
+        <div class="rrc-desc">Claims, EHR, HIPAA, ICD-10, HL7/FHIR, payer and provider data platforms.</div>
       </div>
+    </div>
 
-      <div class="role-card">
-        <div class="role-icon-lbl">HC</div>
-        <div class="role-title">Healthcare Data Engineer</div>
-        <div class="role-level">Senior</div>
-        <div class="role-desc">Claims/EHR integration, HIPAA compliance, PHI governance, clinical data modeling, and payer/provider platforms.</div>
+    <div class="resume-dl-strip rev d2">
+      <div class="rdl-left">
+        <div class="rdl-label">Download Résumé</div>
+        <div class="rdl-note"><strong style="color:var(--w)">Suyog Mainali Resume.pdf</strong></div>
+        <div class="rdl-meta">Open to remote, hybrid, or on-site</div>
       </div>
-
-      <div class="role-card">
-        <div class="role-icon-lbl">DA</div>
-        <div class="role-title">Product / Data Analyst</div>
-        <div class="role-level">Mid / Senior</div>
-        <div class="role-desc">SQL analytics, product metrics, stakeholder reporting, dashboards, and translating data into business decisions.</div>
+      <div class="rdl-btns">
+        <a href="files/Suyog Mainali Resume.pdf" download="Suyog Mainali Resume.pdf" class="btn-lime">Download PDF</a>
+        <a href="files/Suyog Mainali Resume.pdf" target="_blank" rel="noopener" class="btn-ghost">Preview</a>
       </div>
     </div>
   </div>
 </section>
 
-  <div class="resume-dl-strip rev d2">
-  <div class="rdl-left">
-    <div class="rdl-label">Download Résumé</div>
-
-    <div class="rdl-note">
-      <strong style="color:var(--w)">Suyog Mainali Resume.pdf</strong>
-      — focused on data engineering, analytics infrastructure, cloud platforms, and ML-ready data systems.
-    </div>
-
-    <div class="rdl-meta">
-      Senior Data Engineer · Healthcare &amp; analytics domain experience · F-1 STEM OPT with 3 years U.S. work authorization
-    </div>
-  </div>
-
-  <div class="rdl-btns">
-    <a href="files/Suyog Mainali Resume.pdf"
-       download="Suyog Mainali Resume.pdf"
-       class="btn-lime">↓ Download Résumé</a>
-
-    <a href="files/Suyog Mainali Resume.pdf"
-       target="_blank" rel="noopener"
-       class="btn-ghost">Preview PDF</a>
-  </div>
-</div>
-</section>
-
-<!-- ═══ CONTACT ═══════════════════════════ -->
+<!--  CONTACT  -->
 <section id="contact" class="sec">
   <div class="gn">07</div>
   <div class="sec-inner">
-    <div class="sec-lbl">07 <span>— contact</span></div>
+    <div class="sec-lbl">07 <span>- contact</span></div>
     <h2 class="sec-h">Let's Work<br><span class="dim">Together</span></h2>
   </div>
   <div class="con-g rev" style="margin:0 52px">
     <div class="con-col">
-      <p class="con-desc">Seeking Data Engineer, Analytics Engineer, or ML Data Engineer roles starting Summer and Fall 2026. Open to remote, hybrid, or on-site anywhere in the U.S.</p>
+      <p class="con-desc">Seeking AI Engineer, Senior Data Engineer, or ML Engineering roles starting Summer and Fall 2026. Open to remote, hybrid, or on-site anywhere in the U.S.</p>
       <div class="c-items">
         <a href="mailto:mainalisuyog0@gmail.com" class="c-it"><div class="c-ic">✉</div><div><div class="c-lb">Email</div><div class="c-vl">mainalisuyog0@gmail.com</div></div></a>
         <a href="tel:+17572068339" class="c-it"><div class="c-ic">☎</div><div><div class="c-lb">Phone</div><div class="c-vl">+1 (757) 206-8339</div></div></a>
-        <div class="c-it" style="cursor:default"><div class="c-ic">📍</div><div><div class="c-lb">Location</div><div class="c-vl">Williamsburg, VA — Open to relocate</div></div></div>
+        <div class="c-it" style="cursor:default"><div class="c-ic">📍</div><div><div class="c-lb">Location</div><div class="c-vl">Morrisville, NC - Open to relocate</div></div></div>
       </div>
     </div>
     <div class="con-col">
-      <!-- SEND EMAIL VIA FORMSPREE — FREE TIER (50 submissions/month, no backend needed)
+      <!-- SEND EMAIL VIA FORMSPREE - FREE TIER (50 submissions/month, no backend needed)
            SETUP: go to formspree.io, create free account, create new form, get your form ID.
            Replace "YOUR_FORM_ID" below with e.g. "xwkgqnbe" -->
       <div class="form-ttl">Send me a message</div>
@@ -1547,8 +1490,8 @@ footer{
           </a>
         </div>
         <div class="av-block">
-          <div class="av-pill">Available Summer / Fall 2026</div>
-          <div class="av-note">F-1 STEM OPT — 3 years work authorization<br>Sponsorship required thereafter</div>
+          <div class="av-pill">Available</div>
+          <div class="av-note"></div>
         </div>
       </div>
     </div>
@@ -1559,28 +1502,37 @@ footer{
 <footer>
   <span>© <span id="yr"></span> Suyog Mainali</span>
   <span>HTML · CSS · JS · Chart.js · GitHub Pages</span>
-  <span>Williamsburg, VA</span>
+  <span>Morrisville, NC</span>
 </footer>
 </div>
 
 <script>
 'use strict';
 
-/* ── SUPPORTING PROJECTS (FFIEC + Lackey are spotlight cards above) ── */
+/*  SUPPORTING PROJECTS (FFIEC + Lackey + SSRM + Enterprise Analytics are spotlight cards above)  */
 const PD=[
-  {id:'siftline',n:'Siftline — Document QA',s:'deployed',sb:'sb-t',cat:'ai',img:'images/siftline-thumb.png',
+
+
+  {id:'siftline',n:'Siftline - Document QA',s:'deployed',sb:'sb-t',cat:'ai',img:'images/siftline-thumb.png',
    url:'https://shiftline.streamlit.app/',gh:'https://github.com/suyog12/Siftline',feat:false,
-   desc:'Private, grounded Q and A with summarization for PDF, DOCX, and TXT. Dense FAISS + sparse TF-IDF score fusion, optional cross-encoder re-ranking. Strict QA — answers capped to 1–3 sentences from retrieved chunks only.',
+   desc:'Private, grounded Q and A with summarization for PDF, DOCX, and TXT. Dense FAISS + sparse TF-IDF score fusion, optional cross-encoder re-ranking. Strict QA - answers capped to 1–3 sentences from retrieved chunks only.',
    arch:[['PDF/DOCX/TXT','an-x'],['Chunker','an-b'],['FAISS dense','an-p'],['TF-IDF sparse','an-p'],['Score fusion','an-b'],['flan-t5 QA','an-g']],
    tags:['Python','Streamlit','FAISS','TF-IDF','sentence-transformers','flan-t5-base','distilbart'],
    how:'Dense + BM25-style sparse scores fused via weighted sum. Cross-encoder reranks. QA prompt forbids guessing. Map-reduce prevents token overflow on large files. All in-memory.'},
+  {id:'dei',n:'DEI Downloader',s:'deployed',sb:'sb-g',cat:'data-eng',img:null,
+   url:'https://dei-downloader-web.onrender.com/',gh:'https://github.com/suyog12/dei_download',feat:false,
+   desc:'Web app that bundles the raw indicators behind the Tufts Digital Evolution Index 2025 into a single spreadsheet download. Select pillars, pick a year range, click download. Pulls free public indicators from 7+ authoritative APIs including World Bank (WDI, Findex, WGI, WIPO, UNESCO), Our World in Data, and IMF DataMapper, covering 125 DEI economies with ISO-3 codes and regional groupings.',
+   arch:[['World Bank APIs','an-a'],['OWID / IMF','an-a'],['FastAPI orchestrator','an-b'],['Parallel fetch','an-b'],['openpyxl builder','an-g'],['React + Vite','an-g']],
+   tags:['Python','FastAPI','React','TypeScript','Vite','openpyxl','World Bank API','IMF API','Our World in Data','Render'],
+   how:'Parallel async dispatch fetches from 7 source modules simultaneously. orchestrator.py coordinates the fetch, normalizes schemas, and assembles a multi-sheet xlsx using openpyxl (no pandas, keeps container small). Manual and subscription sources appear as download instructions rather than auto-fetches. Frontend is a single React page that talks to the backend over JSON. Deployed on Render with a keepalive GitHub Action to prevent cold starts.'},
+
   {id:'amzn1',n:'Amazon Reviews ETL (SerpAPI)',s:'complete',sb:'sb-x',cat:'data-eng',img:'images/amazon-reviews-serpapi-thumb.png',
    url:null,gh:'https://github.com/suyog12/amazon_reviews_etl_pipeline_using_serpapi',feat:false,
-   desc:'Python ETL with Flask REST API. ASIN extraction, BeautifulSoup metadata scraping, SerpAPI review collection, PostgreSQL on Aiven Cloud (SSL). Incremental via etl_log table.',
+   desc:'ETL pipeline built for Prof. Seth Li at William and Mary to support research on consumer buying patterns. Collects Amazon product metadata and customer reviews via SerpAPI, stores in PostgreSQL on Aiven Cloud with SSL, and exposes a Flask REST API with a web dashboard for URL management, progress tracking, and CSV export. Incremental processing skips already-scraped ASINs.',
    arch:[['URL to ASIN','an-x'],['BeautifulSoup','an-a'],['SerpAPI','an-a'],['Flask API','an-b'],['PostgreSQL','an-g']],
    tags:['Python','Flask','PostgreSQL','SerpAPI','BeautifulSoup','Aiven Cloud'],
    how:'Background-thread ETL. etl_log tracks last_extracted per ASIN. Parameterized queries. 2s delay + browser headers. SSL via Aiven ca.pem.'},
-  {id:'d100',n:'$100 Question — Stock Dashboard',s:'deployed',sb:'sb-t',cat:'analytics',img:'images/100-question-thumb.png',
+  {id:'d100',n:'$100 Question - Stock Dashboard',s:'deployed',sb:'sb-t',cat:'analytics',img:'images/100-question-thumb.png',
    url:'https://final-group-project-dash-app-team-9.onrender.com',gh:'https://github.com/suyog12/Final-Group-Project---Dash-App-Team-9',feat:false,
    desc:'Multi-page Plotly Dash: normalized $100 growth curves, candlestick with 20/50-day MAs, rolling volatility. Alpha Vantage API, Werkzeug auth.',
    arch:[['Alpha Vantage','an-a'],['Python','an-b'],['Plotly Dash','an-b'],['SQLite','an-x'],['Render','an-g']],
@@ -1618,7 +1570,7 @@ const PD=[
    how:'Headless Chromium after full JS render. asyncio concurrent fetches. Composite key prevents duplicates.'}
 ];
 
-/* ── BUILD PROJECTS ───────────────────────────────────────── */
+/*  BUILD PROJECTS  */
 (function(){
   const grid=document.getElementById('pg');
   if(!grid)return;
@@ -1629,7 +1581,7 @@ const PD=[
     const num=String(i+1).padStart(2,'0');
     const thumb=p.img
       ?`<img src="${p.img}" alt="${p.n}" class="pc-img" loading="lazy" onerror="this.style.display='none'">`
-      :`<div class="pc-ph"><div class="pc-ph-glow"></div><div class="pc-ph-cat">${p.cat.replace('-',' ')}</div><div class="pc-ph-n">${p.n.split('—')[0].split('(')[0].trim()}</div></div>`;
+      :`<div class="pc-ph"><div class="pc-ph-glow"></div><div class="pc-ph-cat">${p.cat.replace('-',' ')}</div><div class="pc-ph-n">${p.n.split('-')[0].split('(')[0].trim()}</div></div>`;
     const archH=p.arch.map(([n,c],j)=>`<span class="an ${c}">${n}</span>${j<p.arch.length-1?'<span class="parr">→</span>':''}`).join('');
     const tagsH=p.tags.map(t=>`<span class="ptag">${t}</span>`).join('');
     const linksH=[
@@ -1670,7 +1622,7 @@ const PD=[
   });
 })();
 
-/* ── SIDE DOTS + TOP NAV ──────────────────────────────────── */
+/*  SIDE DOTS + TOP NAV  */
 const dots=document.querySelectorAll('.dot');
 const secs=document.querySelectorAll('section[id]');
 const tbAs=document.querySelectorAll('.tb-links a');
@@ -1700,7 +1652,7 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 updateNav();
 
-/* ── EXPERIENCE ACCORDION ─────────────────────────────────── */
+/*  EXPERIENCE ACCORDION  */
 document.querySelectorAll('.exp-trig').forEach(tr=>{
   tr.addEventListener('click',()=>{
     const row=tr.closest('.exp-row');
@@ -1711,11 +1663,11 @@ document.querySelectorAll('.exp-trig').forEach(tr=>{
   });
 });
 
-/* ── SCROLL REVEAL ────────────────────────────────────────── */
+/*  SCROLL REVEAL  */
 const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.06});
 document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
 
-/* ── COUNTERS ─────────────────────────────────────────────── */
+/*  COUNTERS  */
 function animC(el){
   const t=parseFloat(el.dataset.t),s=el.dataset.s||'',dur=1500,st=performance.now();
   const fl=t!==Math.floor(t);
@@ -1727,14 +1679,14 @@ function animC(el){
 const co=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.done){e.target.dataset.done=1;animC(e.target);}});},{threshold:.5});
 document.querySelectorAll('.cnt').forEach(el=>co.observe(el));
 
-/* ── SKILL BARS ───────────────────────────────────────────── */
+/*  SKILL BARS  */
 const bo=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
   e.target.querySelectorAll('.skb-f').forEach(b=>setTimeout(()=>{b.style.width=b.dataset.w+'%';},140));
   e.target.querySelectorAll('.pbf').forEach(b=>setTimeout(()=>{b.style.width=b.dataset.w+'%';},200));
 }});},{threshold:.15});
 document.querySelectorAll('.skb,.cbox').forEach(el=>bo.observe(el));
 
-/* ── RESUME SELECTOR ──────────────────────────────────────── */
+/*  RESUME SELECTOR  */
 document.querySelectorAll('.ro').forEach(opt=>{
   opt.addEventListener('click',()=>{
     document.querySelectorAll('.ro').forEach(o=>o.classList.remove('sel'));
@@ -1746,10 +1698,24 @@ document.querySelectorAll('.ro').forEach(opt=>{
   });
 });
 
-/* ── FOOTER YEAR ──────────────────────────────────────────── */
+
+/*  PROJECT SELECTOR  */
+document.querySelectorAll('.proj-sel-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const proj=card.dataset.proj;
+    document.querySelectorAll('.proj-sel-card').forEach(c=>c.classList.remove('active'));
+    document.querySelectorAll('.proj-detail').forEach(d=>d.classList.remove('active'));
+    card.classList.add('active');
+    const detail=document.getElementById('detail-'+proj);
+    if(detail)detail.classList.add('active');
+  });
+});
+
+
+/*  FOOTER YEAR  */
 const yEl=document.getElementById('yr');if(yEl)yEl.textContent=new Date().getFullYear();
 
-/* ── CONTACT FORM (Formspree) ────────────────────────────── */
+/*  CONTACT FORM (Formspree)  */
 const form=document.getElementById('contact-form');
 const btn=document.getElementById('ef-btn');
 const msg=document.getElementById('ef-msg');
@@ -1773,14 +1739,14 @@ if(form){
         throw new Error(d.errors?d.errors.map(er=>er.message).join(', '):'Something went wrong');
       }
     } catch(err){
-      msg.textContent='Could not send — email mainalisuyog0@gmail.com directly.';
+      msg.textContent='Could not send - email mainalisuyog0@gmail.com directly.';
       msg.className='ef-msg ef-err';
     }
     btn.disabled=false;btn.textContent='Send Message';
   });
 }
 
-/* ── CHARTS ───────────────────────────────────────────────── */
+/*  CHARTS  */
 (function initCharts(){
   if(typeof Chart==='undefined'){setTimeout(initCharts,80);return;}
   const tc='rgba(255,255,255,.28)',gc='rgba(255,255,255,.05)';
